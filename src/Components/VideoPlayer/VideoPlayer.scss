@@ -1,0 +1,23 @@
+.video {
+    background-color: black;
+    max-width: 100%;
+    &__player {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+        overflow: hidden;
+        display:flex;
+        align-items: center;
+    }
+}
+@media (min-width: 80rem) {
+    .video {
+        background-color: black;
+        width: 100%;
+        margin: auto;
+        &__player {
+            max-width: 80rem;
+            margin: auto;
+        }
+    }
+}

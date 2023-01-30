@@ -1,16 +1,12 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
 import './StartPage.scss'
 import * as THREE from 'three';
 import vantaFog from 'vanta/src/vanta.fog';
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion"
+import { Link } from 'react-router-dom'
 
 function StartPage() {
-  const navigate = useNavigate()
-  const buttonClick = () => {
-    navigate('/home')
-  }
   const [vantaEffect, setVantaEffect] = useState(0);
   const vantaRef = useRef(null);
   useEffect(() => {
@@ -39,12 +35,15 @@ function StartPage() {
 
   return (
     <div ref={vantaRef} className='start'>
-        <motion.button 
-        whileHover={{
-        scale: 1.3,
-        transition: { duration: 1 },
-        }}
-        className="start__button" onClick={buttonClick}>Enter Here</motion.button>
+        <Link to='/home'>
+          <motion.p
+            whileHover={{
+            scale: 1.3,
+            transition: { duration: 1 },
+            }}
+            className="start__button" >Enter Here
+          </motion.p>
+        </Link>
     </div>
   )
 }
