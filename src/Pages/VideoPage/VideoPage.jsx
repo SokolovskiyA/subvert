@@ -1,10 +1,9 @@
 import React from 'react'
 import './VideoPage.scss'
 import Header from '../../Components/Header/Header'
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
-import * as THREE from 'three';
-import vantaFog from 'vanta/src/vanta.fog'
+
 
 
 function VideoPage() {
