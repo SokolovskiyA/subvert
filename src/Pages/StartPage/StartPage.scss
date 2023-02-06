@@ -2,19 +2,28 @@
     width: 100%;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #2d2d2a;
     &__button {
-        padding: 1rem;
-        background-color: rgb(0, 0, 0, 0.4);
+        position: relative;
+        top: -13rem;
+        padding: 1rem 2rem;
+        color: #c14953;
+        background-color: #e5dcc5;
         min-width: 150px;
-        color: white;
-        border-radius: 10px;
-        border: .0625rem solid black;
+        border-radius: 30px;
         text-align: center;
+        font-family: 'Alegreya';
+        font-size: 1.5rem;
     }
     &__button:hover {
-        background-color: rgb(0, 0, 0, 0.7);
+        color: #e5dcc5;
+        background-color: #c14953;
         transition: 1s;
+    }
+    &__logo {
+        height: 100%;
     }
 }

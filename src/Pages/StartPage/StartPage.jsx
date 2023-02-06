@@ -5,9 +5,10 @@ import vantaFog from 'vanta/src/vanta.fog';
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion"
 import { Link } from 'react-router-dom'
+import logo from '../../assets/images/logoGif.gif'
 
 function StartPage() {
-  const [vantaEffect, setVantaEffect] = useState(0);
+  /*const [vantaEffect, setVantaEffect] = useState(0);
   const vantaRef = useRef(null);
   useEffect(() => {
     if (!vantaEffect) {
@@ -31,10 +32,11 @@ function StartPage() {
     return () => {
       if (vantaEffect) vantaEffect.destroy();
     };
-  }, [vantaEffect]);
+  }, [vantaEffect]);*/
 
   return (
-    <div ref={vantaRef} className='start'>
+    <div className='start'>
+        <img className="start__logo" src={logo} alt='logo'/>
         <Link to='/home'>
           <motion.p
             whileHover={{

@@ -18,6 +18,7 @@ function VideoPage() {
   useEffect(() => { 
     fetchVideos()
   }, [])
+  /*
     const [vantaEffect, setVantaEffect] = useState(0);
     const ref = useRef(null);
     useEffect(() => {
@@ -43,15 +44,14 @@ function VideoPage() {
         if (vantaEffect) vantaEffect.destroy();
       };
     }, [vantaEffect]);
-  
+  */
     return (
-      <section className='videos' ref={ref}> 
+      <section className='videos'> 
         <Header />
         <div className="videos__container">
           {videos.map(video => 
             <div key={video.snippet.resourceId.videoId} className="videos__video">
               <h2>{video.snippet.title}</h2>
-              <h2>This is video</h2>
             </div>
           )}
         </div>
