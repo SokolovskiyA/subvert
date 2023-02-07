@@ -12,7 +12,7 @@ function VideoPlayer(props) {
             console.log(response.data.items)
             const sorted = response.data.items
             sorted.sort((a,b)=> Date.parse(b.snippet.publishedAt) -  Date.parse(a.snippet.publishedAt))
-            setVideo(sorted[0].snippet.resourceId.videoID)
+            setVideo(sorted[0].snippet.resourceId.videoId)
             })
         .catch(error => console.log(error))
     }
@@ -22,7 +22,15 @@ function VideoPlayer(props) {
     
     return (  
         <section className="video"> 
-            <iframe className='video__player' width="560" height="315" src={`https://www.youtube.com/embed/${featuredVideo}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+            <iframe 
+                className='video__player' 
+                width="560" 
+                height="315" 
+                src={`https://www.youtube.com/embed/${featuredVideo}`} 
+                title="YouTube video player" 
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowFullScreen></iframe>
         </section>
     )
 }
