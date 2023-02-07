@@ -3,7 +3,7 @@
 
 .contact {
     position: relative;
-    background-color: black;
+    background-color: #2d2d2a;
     color: white;
     padding: 2rem;
     display: flex;
@@ -32,10 +32,9 @@
     }
     &__input {
         width: 80%;
-        font-size: 1.5rem;
-        font-weight: 300;
         padding: 0.5rem;
         border: none;
+        border-radius: 20px;
     }
     &__input:focus { 
         outline: none;
