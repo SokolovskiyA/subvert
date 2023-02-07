@@ -1,8 +1,8 @@
 import React from 'react'
 import './StartPage.scss'
-import * as THREE from 'three';
+/*import * as THREE from 'three';
 import vantaFog from 'vanta/src/vanta.fog';
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";*/
 import { motion } from "framer-motion"
 import { Link } from 'react-router-dom'
 import logo from '../../assets/images/logoGif.gif'
