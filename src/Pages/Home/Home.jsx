@@ -6,7 +6,7 @@ function Home() {
   return (
     <div className='home'>
       <VideoPlayer />
-      <img className='page-break' src={pageBreak}/>
+      <img className='page-break' src={pageBreak} alt="page break"/>
       <section className="about">
         <h2 className='about__header'>About Us</h2>
         <div>
