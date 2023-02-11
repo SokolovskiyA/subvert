@@ -1,22 +1,22 @@
+@use '../../styles/colors' as *;
 .header {
-    display: flex;
-    justify-content: center;
-    background-color: #2d2d2a;
+    position: fixed;
+    padding: 4rem;
+    background-color: $LightBackground;
+    z-index: 100;
+    top:0;
+    left:0;
+    border-radius: 0px 0px 5px 0px;
     &__nav {
-        width: 100%;
-        color: white;
+        position: relative;
         display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 2rem;
-        padding: 2rem;
+        flex-direction: column;
+        gap: 1rem;
+        color: $TextColor;
     }
-    &__logo {
-        height: 7rem;
-    }
-    &__link {
-        font-family: 'Alegreya';
-        font-size: 1.5rem;
-        color: #e5dcc5;
+    &__close {
+        position: absolute;
+        bottom: 0.5rem;
+        right: 0.5rem;
     }
 }

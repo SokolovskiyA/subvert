@@ -11,7 +11,11 @@ function VideoPage() {
     const [videos, setVideos] = useState([])
     const fetchVideos = () => {
     axios.get(`https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=100&playlistId=PL4D0WL2ASB5zo56UHBVrfZ04jsG_EuQfj&key=${apiKey}`)
-    .then(response => setVideos(response.data.items))
+    .then(response => {
+      const sorted = response.data.items
+      sorted.sort((a,b)=> Date.parse(b.snippet.publishedAt) -  Date.parse(a.snippet.publishedAt))
+      setVideos(sorted)
+      })
     .catch(error => console.log(error))
   }
   useEffect(() => { 

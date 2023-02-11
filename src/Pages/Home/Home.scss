@@ -1,6 +1,36 @@
+@use '../../styles/colors' as *;
 .home {
-    background-color: #2d2d2a;
+    
+    background-color: $MainBackground;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $TextColor;
 }
 .example {
     width: 60%;
+}
+.nav {
+    font-size: 2rem;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+}
+.about { 
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    &__header {
+        margin: 0 2rem;
+        width: 100%;
+    }
+    &__text {
+        font-family: sans-serif;
+        padding: 2rem;
+        text-align: center;
+    }
+}
+.page-break {
+    width: 80%;
 }

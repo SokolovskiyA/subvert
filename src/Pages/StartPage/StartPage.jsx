@@ -6,6 +6,8 @@ import { useState, useEffect, useRef } from "react";*/
 import { motion } from "framer-motion"
 import { Link } from 'react-router-dom'
 import logo from '../../assets/images/logoGif.gif'
+import logo2 from '../../assets/images/puppetsPop.gif'
+import logo3 from '../../assets/images/puppetsPop2.gif'
 
 function StartPage() {
   /*const [vantaEffect, setVantaEffect] = useState(0);
@@ -36,7 +38,11 @@ function StartPage() {
 
   return (
     <div className='start'>
-        <img className="start__logo" src={logo} alt='logo'/>
+        <div className='start__logo-container'> 
+          <img className="start__puppets" src={logo2} alt='logo'/>
+          <img className="start__logo" src={logo} alt='logo'/>
+          <img className="start__puppets" src={logo3} alt='logo'/>
+        </div>
         <Link to='/home'>
           <motion.p
             whileHover={{

@@ -1,24 +1,18 @@
 import React from 'react'
 import './Home.scss'
-import Header from '../../Components/Header/Header'
 import VideoPlayer from '../../Components/VideoPlayer/VideoPlayer'
-import ex1 from '../../assets/ex1.jpg'
-import ex2 from '../../assets/ex2.gif'
-import ex3 from '../../assets/ex3.png'
-import ex4 from '../../assets/ex4.png'
-
-
+import pageBreak from '../../assets/images/pageBreakUp.gif'
 function Home() {
   return (
     <div className='home'>
-      <Header />
       <VideoPlayer />
-      <div>
-        <img className='example' src={ex1} alt="examples"/>
-        <img className='example' src={ex2} alt="examples"/>
-        <img className='example' src={ex3} alt="examples"/>
-        <img className='example' src={ex4} alt="examples"/>
-      </div>
+      <img className='page-break' src={pageBreak}/>
+      <section className="about">
+        <h2 className='about__header'>About Us</h2>
+        <div>
+          <p className='about__text'>Welcome to the Land of No Easy Answers. We seek to unravel the mysteries of the mind, the vagaries of the universe, and all the connections between. From learning to friend again in the post-pandemic, to combining neuroscience with sock puppets, The Subvert Podcast is here to help explain the chaos, with more chaos. Join hosts Kristin Rumohr and Aaron Stewart as we attempt to unravel the mysteries of the mind and your universe, subverting the disconnect between perceived realities. Subscribe to our YouTube channel to get the most out of this podcast</p>
+        </div>
+      </section>
     </div>
   )
 }
