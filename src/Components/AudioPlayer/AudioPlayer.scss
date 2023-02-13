@@ -2,36 +2,54 @@
 
 
 .container {
-    position: relative;
     color: $MainBackground;
     background-color: $MainBackground;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     gap: 3rem;
-    width: 100%;
+    width: 90%;
     padding: 2rem;
     border-radius: 5px;
-    background: #ffd817e0;
-
+    background: #ffd817f1;
     &__header {
         width: 100%;
     };
     &__item {
-        width: 5rem;
-        height: 5rem;
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        width: 45%;
         border: 2px solid $MainBackground;
-        background-color: $MainBackground;
+        background-color: $HighlightColor;
         border-radius: 5px;
         padding: 1rem;
-        -webkit-box-shadow: 5px 3px 25px 1px rgba(0,31,63,0.89); 
-        box-shadow: 5px 3px 25px 1px rgba(0,31,63,0.89);
+        -webkit-box-shadow: 7px 4px 5px  rgba(0,31,63,0.89); 
+        box-shadow: 7px 5px 5px rgba(0,31,63,0.89);
     }
     &__item:hover {
         scale: 1.05;
         transition: 1s;
     }
     &__item-image{
-        width: 100%;
+        width: 3rem;
         color: $MainBackground;
+    }
+    &__item-head {
+        font-size: 0.8rem;
+        background-color: $HighlightColor;
+    }
+    &__pup {
+        position: absolute;
+        width: 2.5rem;
+        top: 0;
+        left: 80%;
+        transition: all 1s;
+        z-index: -50;
+    }
+    &__item:hover &__pup {
+        transform: rotate(18deg);
+        top: -2.8rem;
     }
 }

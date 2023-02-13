@@ -14,7 +14,6 @@ function Home() {
         <div>
           <p className='about__text'>Welcome to the Land of No Easy Answers. We seek to unravel the mysteries of the mind, the vagaries of the universe, and all the connections between. From learning to friend again in the post-pandemic, to combining neuroscience with sock puppets, The Subvert Podcast is here to help explain the chaos, with more chaos. Join hosts Kristin Rumohr and Aaron Stewart as we attempt to unravel the mysteries of the mind and your universe, subverting the disconnect between perceived realities. Subscribe to our YouTube channel to get the most out of this podcast</p>
         </div>
-        
       </section>
       <AudioPlayer />
     </div>

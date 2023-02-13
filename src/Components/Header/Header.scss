@@ -19,4 +19,17 @@
         bottom: 0.5rem;
         right: 0.5rem;
     }
+    &__puppet {
+        width: 1rem;
+        rotate: -20deg;
+        opacity: 0;
+    }
+    &__link {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    &__link:hover &__puppet {
+        opacity: 1;
+    }
 }
