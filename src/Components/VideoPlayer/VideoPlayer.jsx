@@ -25,7 +25,7 @@ function VideoPlayer(props) {
     
     return (  
         <section className="video"> 
-            <h2 className="video__header">New Episode</h2>
+            <h2 className="video__header">See Us</h2>
             <div className='video__player-div'>
                 <iframe 
                     className='video__player' 

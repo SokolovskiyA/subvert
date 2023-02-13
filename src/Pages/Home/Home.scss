@@ -37,3 +37,14 @@
 .page-break {
     width: 80%;
 }
+.store {
+    margin: 2rem;
+    &__header {
+        text-align: center;
+        margin: 2rem 2rem 3rem;
+    };
+    &__container {
+        display: flex;
+        gap: 4rem;
+    }
+}

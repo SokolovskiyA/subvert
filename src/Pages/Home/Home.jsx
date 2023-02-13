@@ -3,6 +3,7 @@ import './Home.scss'
 import VideoPlayer from '../../Components/VideoPlayer/VideoPlayer'
 import pageBreak from '../../assets/images/pageBreakUp.gif'
 import AudioPlayer from '../../Components/AudioPlayer/AudioPlayer'
+import ItemCard from '../../Components/ItemCard/ItemCard'
 
 function Home() {
   return (
@@ -16,6 +17,15 @@ function Home() {
         </div>
       </section>
       <AudioPlayer />
+      <section className="store">
+        <h2 className='store__header'>Wear our merch</h2>
+        <div className='store__container'>
+          <ItemCard />
+          <ItemCard />
+          <ItemCard />
+          <ItemCard />
+        </div>
+      </section>
     </div>
   )
 }
