@@ -1,6 +1,5 @@
 import React from 'react'
 import './VideoPage.scss'
-import Header from '../../Components/Header/Header'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
@@ -50,7 +49,6 @@ function VideoPage() {
   */
     return (
       <section className='videos'> 
-        <Header />
         <div className="videos__container">
           {videos.map(video => 
             <div key={video.snippet.resourceId.videoId} className="videos__video">

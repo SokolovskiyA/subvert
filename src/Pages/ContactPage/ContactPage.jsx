@@ -1,7 +1,6 @@
 import './ContactPage.scss'
 import { useRef, useState } from 'react'
 import emailjs from '@emailjs/browser'
-import Header from '../../Components/Header/Header';
 
 
 function ContactPage() {
@@ -31,7 +30,6 @@ function ContactPage() {
 
     return (
         <div className="contact">
-            <Header/>
             <h1 className='contact__heading'>contact me</h1>
             <form ref={form} onSubmit={sendEmail} className='contact__form'>
                 <label className="contact__label" >tell me who you are</label>

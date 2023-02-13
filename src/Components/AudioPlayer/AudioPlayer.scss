@@ -1,0 +1,37 @@
+@use '../../styles/colors' as *;
+
+
+.container {
+    position: relative;
+    color: $MainBackground;
+    background-color: $MainBackground;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    width: 100%;
+    padding: 2rem;
+    border-radius: 5px;
+    background: #ffd817e0;
+
+    &__header {
+        width: 100%;
+    };
+    &__item {
+        width: 5rem;
+        height: 5rem;
+        border: 2px solid $MainBackground;
+        background-color: $MainBackground;
+        border-radius: 5px;
+        padding: 1rem;
+        -webkit-box-shadow: 5px 3px 25px 1px rgba(0,31,63,0.89); 
+        box-shadow: 5px 3px 25px 1px rgba(0,31,63,0.89);
+    }
+    &__item:hover {
+        scale: 1.05;
+        transition: 1s;
+    }
+    &__item-image{
+        width: 100%;
+        color: $MainBackground;
+    }
+}

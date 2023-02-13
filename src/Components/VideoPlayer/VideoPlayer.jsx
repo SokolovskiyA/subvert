@@ -13,9 +13,9 @@ function VideoPlayer(props) {
         .then(response => {
             const sorted = response.data.items
             sorted.sort((a,b)=> Date.parse(b.snippet.publishedAt) -  Date.parse(a.snippet.publishedAt))
-            setVideoId(sorted[0].snippet.resourceId.videoId)
+            setVideoId(sorted[1].snippet.resourceId.videoId)
             console.log(sorted)
-            setHead(sorted[0].snippet.title)
+            setHead(sorted[4].snippet.title)
             })
         .catch(error => console.log(error))
     }

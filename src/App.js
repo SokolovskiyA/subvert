@@ -13,23 +13,20 @@ import { useState } from 'react';
 import Header from './Components/Header/Header';
 
 function App() {
-  let [menuOpen, setMenuOpen] = useState(false)
-  
+  let [menuOpen, setMenuOpen] = useState(true)
   const openMenu = (e) => {
-    setMenuOpen(true)
-    console.log(menuOpen)
+    setMenuOpen(false)
   }
   const closeMenu = (e) => {
-    setMenuOpen(false)
-    console.log(menuOpen)
+    setMenuOpen(true)
   }
 
   return (
     <div className="App">
-      <Button click={openMenu} text="menu" class="nav"/>
-      <Logo />
       <BrowserRouter>
-        {menuOpen === true && <Header close={closeMenu}/>}
+        {menuOpen === false && <Header close={closeMenu}/>}
+        <Button text="MENU" class="nav" click={openMenu}/>
+        <Logo />
         <Routes>
           <Route path='/' element={<StartPage />} />
           <Route path='/video' element={<VideoPage />}/>

@@ -1,11 +1,12 @@
 import React from 'react'
 import './AudioPage.scss'
-import Header from '../../Components/Header/Header'
 
 function AudioPage() {
   return (
-    <div>
-      <Header />
+    <div className="container">
+        <div>
+          
+        </div>
     </div>
   )
 }
