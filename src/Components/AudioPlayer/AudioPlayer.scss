@@ -20,12 +20,10 @@
         position: relative;
         display: flex;
         align-items: center;
-        gap: 1rem;
         width: 45%;
         border: 2px solid $MainBackground;
         background-color: $HighlightColor;
         border-radius: 5px;
-        padding: 1rem;
         -webkit-box-shadow: 7px 4px 5px  rgba(0,31,63,0.89); 
         box-shadow: 7px 5px 5px rgba(0,31,63,0.89);
     }
@@ -35,22 +33,26 @@
     }
     &__item-image{
         width: 3rem;
+        margin: 1rem;
         color: $MainBackground;
     }
     &__item-head {
+        align-self: stretch;
         font-size: 0.7rem;
         background-color: $HighlightColor;
+        padding: 1rem;
+        border-radius: 5px;
     }
     &__pup {
         position: absolute;
         width: 2.3rem;
-        top: -0.3rem;
+        top: -1.2rem;
         left: 70%;
         transition: all 1s;
         z-index: -1;
     }
     &__item:hover &__pup {
         transform: rotate(18deg);
-        top: -2.3rem;
+        top: -2.8rem;
     }
 }
