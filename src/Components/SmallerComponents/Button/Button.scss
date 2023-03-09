@@ -1,0 +1,10 @@
+@use '../../../styles/colors' as *;
+
+.but {
+    background-color: inherit;
+    border: none;
+}
+.but:hover {
+    scale: 1.2;
+    transition: 1s;
+}

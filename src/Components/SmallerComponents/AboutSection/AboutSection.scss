@@ -1,0 +1,14 @@
+@use '../../../styles/colors' as *;
+
+.about {
+    background-color: $Color2-1;
+    color: $Color2-2;
+    padding: 3rem;
+    &__head {
+        margin-bottom: 1rem;
+    }
+    &__text {
+        line-height: 1.4rem;
+        margin-bottom: 2rem;
+    }
+}

@@ -1,0 +1,40 @@
+@use '../../../styles/colors' as *;
+
+.header {
+    background-color: $Color1-1;
+    color: $Color1-2;
+    display: flex;
+    width: 100%;
+    &__left {
+        width: 35%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $Color1-2;
+        position: relative;
+    }
+    &__right {
+        width: 65%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__logo {
+        max-height: 15rem;
+    }
+    &__close {
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+        font-family: 'fester';
+        font-weight: 600;
+        font-size: 0.8rem;
+        color: $Color2-2;
+    }
+    &__button {
+        font-family: 'fester';
+        font-weight: 600;
+        font-size: 2rem;
+        color: $Color2-2;
+    }
+}

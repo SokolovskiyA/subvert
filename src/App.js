@@ -1,40 +1,42 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import './App.scss'
-import StartPage from "./Pages/StartPage/StartPage";
-import Home from './Pages/Home/Home'
-import VideoPage from './Pages/VideoPage/VideoPage'
-import AudioPage from './Pages/AudioPage/AudioPage'
-import AboutPage from './Pages/AboutPage/AboutPage'
-import ContactPage from './Pages/ContactPage/ContactPage'
-import MerchendisePage from './Pages/MerchendisePage/MerchendisePage'
-import Button from './Components/Button/Button';
-import Logo from './Components/Logo/Logo';
-import { useState } from 'react';
-import Header from './Components/Header/Header';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+
+
+
+import MerchPage from './Components/MerchPage/MerchPage';
+import VideoPage from './Components/VideoPage/VideoPage';
+import StartPage from './Components/StartPage/StartPage';
+import HomePage from './Components/HomePage/HomePage';
+import AudioPage from './Components/AudioPage/AudioPage';
+
 
 function App() {
-  let [menuOpen, setMenuOpen] = useState(true)
-  const openMenu = (e) => {
-    setMenuOpen(false)
+  const [ videos, setVideos] = useState([])
+  const apiKey="AIzaSyDE8Zv4QfTBpbzCQy4cBhzGWRI2nxYVQrs"
+  
+  const fetchVideos = () => {
+      axios.get(`https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=100&playlistId=PL4D0WL2ASB5zo56UHBVrfZ04jsG_EuQfj&key=${apiKey}`)
+      .then(response => {
+          const sorted = response.data.items
+          sorted.sort((a,b)=> Date.parse(b.snippet.publishedAt) -  Date.parse(a.snippet.publishedAt))
+          setVideos(sorted)
+          })
+      .catch(error => console.log(error))
   }
-  const closeMenu = (e) => {
-    setMenuOpen(true)
-  }
-
+  useEffect(() => { 
+      fetchVideos()
+  }, [])
   return (
     <div className="App">
       <BrowserRouter>
-        {menuOpen === false && <Header close={closeMenu}/>}
-        <Button text="MENU" class="nav" click={openMenu}/>
-        <Logo />
         <Routes>
-          <Route path='/' element={<StartPage />} />
+          <Route path='/' element={<StartPage />}/>
+          <Route path='/home' element={<HomePage videos={videos} />}/>
           <Route path='/video' element={<VideoPage />}/>
           <Route path='/audio' element={<AudioPage />}/>
-          <Route path='/merchendise' element={<MerchendisePage />}/>
-          <Route path='/about' element={<AboutPage />}/>
-          <Route path='/contacts' element={<ContactPage />}/>
-          <Route path='/home' element={<Home />}/>
+          <Route path='/merchendise' element={<MerchPage />}/>
         </Routes>
       </BrowserRouter>
     </div>

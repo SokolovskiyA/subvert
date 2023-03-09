@@ -3,19 +3,14 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-family: "Anton";
-    letter-spacing: 2px;
-    
 }
 a {
     text-decoration: none;
     color: inherit;
 }
-
-.App {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: $MainBackground;
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'fester';
+}
+p {
+    font-family: 'Carrois Gothic';
 }

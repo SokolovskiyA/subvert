@@ -1,0 +1,30 @@
+@use '../../../styles/colors' as *;
+.player {
+    background-color: $Color3-1;
+    color: $Color3-2;
+    display: flex;
+    flex-wrap: wrap;
+    &__video {
+        width: 60%;
+    }
+    &__title {
+        font-family: 'fester';
+        font-weight: 600;
+        font-size: 1.5rem;
+    }
+    &__text {
+        position: relative;
+        padding: 2rem;
+        width: 40%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__link {
+        align-self: flex-end;
+        margin-left: auto;
+        font-family: 'fester';
+        font-weight: 600;
+        font-size: 0.8rem;
+        color: $Color3-2
+    }
+}
