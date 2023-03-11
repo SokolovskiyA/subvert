@@ -13,6 +13,7 @@ import AudioPage from './Components/AudioPage/AudioPage';
 
 
 function App() {
+  const episodes = [{ title: "episode 1", date: "today" }, { title: "episode 2", date: "today" }, { title: "episode 3", date: "today" }]
   const [ videos, setVideos] = useState([])
   const apiKey="AIzaSyDE8Zv4QfTBpbzCQy4cBhzGWRI2nxYVQrs"
   
@@ -27,20 +28,21 @@ function App() {
   }
   useEffect(() => { 
       fetchVideos()
-  }, [])
+  },[videos])
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<StartPage />}/>
-          <Route path='/home' element={<HomePage videos={videos} />}/>
-          <Route path='/video' element={<VideoPage />}/>
-          <Route path='/audio' element={<AudioPage />}/>
+          <Route path='/home' element={<HomePage videos={videos} episodes={episodes} />}/>
+          <Route path='/videos' element={<VideoPage videos={videos}/>}/>
+          <Route path='/audio' element={<AudioPage episodes={episodes} />}/>
           <Route path='/merchendise' element={<MerchPage />}/>
         </Routes>
       </BrowserRouter>
     </div>
   );
 }
+
 
 export default App;

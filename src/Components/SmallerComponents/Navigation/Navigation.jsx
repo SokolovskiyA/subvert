@@ -9,8 +9,6 @@ function Navigation({click}) {
             <Link className='nav__link' to="/videos">More Video</Link>
             <Link className='nav__link' to="/audio">More Audio</Link>
             <Link className='nav__link' to="/store">Our Store</Link>
-            <a className='nav__link' href='#about'>About Us</a>
-            <a className='nav__link' href='contact us'>Contact Us</a>
         </div>
     )
 }

@@ -1,0 +1,17 @@
+@use '../../../styles/colors' as *;
+
+
+.contact {
+    background-color: $Color5-1;
+    display: flex;
+    justify-content: space-between;
+    &__logo {
+        width: 15%;
+        margin: 2rem auto;
+    }
+    &__info { 
+        background-color: $Color5-2;
+        color: $Color2-2;
+        width: 60%;
+    }
+}

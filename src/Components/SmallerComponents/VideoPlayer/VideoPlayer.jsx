@@ -8,7 +8,7 @@ function VideoPlayer({video}) {
     const navigate = useNavigate('/video')
     const moreEpisodes = (e) => {
         e.preventDefault();
-        navigate('/video')
+        navigate('/videos')
     }
     return (
         <section className="player"> 
@@ -23,6 +23,7 @@ function VideoPlayer({video}) {
                 allowFullScreen>
             </iframe>
             <div className='player__text'>
+                <h2>See Us</h2>
                 <h2 className="player__title">{video.snippet.title}</h2>
                 <Button click={moreEpisodes} classN="player__link" text="see more episodes"/>
             </div>

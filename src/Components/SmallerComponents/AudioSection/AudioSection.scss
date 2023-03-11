@@ -1,0 +1,14 @@
+@use '../../../styles/colors' as *;
+
+.audio {
+    display: flex;
+    &__text {
+        background-color: #0E4144;
+        color: #F2C14A;
+        width:  65%;
+    }
+    &__player {
+        background-color: #F2C14A;
+        width: 35%;
+    }
+}
