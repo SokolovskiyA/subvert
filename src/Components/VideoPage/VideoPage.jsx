@@ -1,16 +1,17 @@
 import React from 'react'
+import './VideoPage.scss'
 
 function VideoPage({videos}) {
+    console.log(videos)
     return (
         <div className="theatre">
-            <ul>
+            <ul className="theatre__library">
                 {videos.map((video) => {
+                    const description = video.snippet.description.split('Welcome to the land of no easy answers')
                     return (
-                        <li key={video.snippet.resourceId.VideoId}>
-                            <h2>{video.snippet.title}</h2>
-                            <p>{video.snippet.description}</p>
-                            <iframe width="560" height="315" src={`https://www.youtube.com/embed/${video.snippet.resourceId.videoId}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                            </iframe>
+                        <li className="theatre__item" key={video.snippet.resourceId.VideoId}>
+                            <h2 className="theatre__item-name">{video.snippet.title}</h2>
+                            <p className="thetre__item-description">{description[0]}</p>
                         </li>
                     )
                 })}

@@ -8,13 +8,13 @@ import ShopSection from '../SmallerComponents/ShopSection/ShopSection'
 import FindSection from '../SmallerComponents/FindSection/FindSection'
 
 
-function HomePage({videos}) {
+function HomePage({videos, episode}) {
     return (
         <div>
             <Header />
             <VideoPlayer video={videos[0]}/>
             <AboutSection />
-            <AudioSection />
+            <AudioSection video={videos[0]} episode={episode} />
             <ShopSection />
             <FindSection />
         </div>

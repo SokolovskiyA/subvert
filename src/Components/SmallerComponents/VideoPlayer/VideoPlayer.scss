@@ -4,6 +4,7 @@
     color: $Color3-2;
     display: flex;
     flex-wrap: wrap;
+    position: relative;
     &__video {
         width: 60%;
     }
@@ -17,14 +18,16 @@
         padding: 2rem;
         width: 40%;
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
     }
     &__link {
-        align-self: flex-end;
-        margin-left: auto;
+        position: absolute;
         font-family: 'fester';
         font-weight: 600;
         font-size: 0.8rem;
-        color: $Color3-2
+        color: $Color3-2;
+        margin: 1rem;
+        right: 0;
+        bottom: 0;
     }
 }
