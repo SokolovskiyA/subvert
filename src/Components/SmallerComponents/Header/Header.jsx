@@ -3,7 +3,8 @@ import './Header.scss'
 import { useState } from 'react';
 import Button from '../Button/Button';
 import Navigation from '../Navigation/Navigation';
-import logo from '../../../Assets/Images/logo.png'
+import logo from '../../../Assets/Images/logo.png';
+
 
 function Header() {
     const [ menuOpen, setMenuOpen ] = useState(false)
@@ -17,7 +18,7 @@ function Header() {
     }
     return (
         <div className="header">
-                { menuOpen ? <div className='header__left'><Navigation click={closeMenu}/><Button text="close" click={closeMenu} classN="header__close"/></div> : <div className="header__left"><Button classN="header__button" click={openMenu} text="Menu"/></div>}
+            {menuOpen ? <Navigation  animate={{x: 200}} click={closeMenu}/> : <Button classN="header__button" click={openMenu} text="Menu"/>}
             <div className='header__right'>
                 <img src={logo} className='header__logo' alt="logo"/>
             </div>

@@ -14,13 +14,13 @@
         position: relative;
     }
     &__right {
-        width: 65%;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
     }
     &__logo {
-        width: 30%;
+        width: 15%;
         margin: 2rem
     }
     &__close {
@@ -36,6 +36,9 @@
         font-family: 'fester';
         font-weight: 600;
         font-size: 2rem;
-        color: $Color2-2;
+        color: $Color2-1;
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
     }
 }

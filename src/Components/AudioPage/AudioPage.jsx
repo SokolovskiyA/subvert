@@ -1,9 +1,11 @@
 import React from 'react'
 import './AudioPage.scss'
+import Header from '../SmallerComponents/Header/Header'
 
 function AudioPage({audio}) {
     return (
         <div className='audio__page'>
+            <Header/>
             <h1>Audio Page</h1>
             <ul>
                 {audio.map((episode) => {

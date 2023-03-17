@@ -3,6 +3,7 @@ import './VideoPage.scss'
 import Video from '../SmallerComponents/Video/Video'
 import { useState } from 'react'
 import logo from '../../Assets/Images/logo.png'
+import Header from '../SmallerComponents/Header/Header'
 
 function VideoPage({videos}) {
 
@@ -14,6 +15,7 @@ function VideoPage({videos}) {
     }
     return (
         <div className="theatre">
+            <Header/>
             <Video video={activeVideo}/>
             <ul className="theatre__library">
                 {videos.filter(video => video.snippet.resourceId.videoId !== activeVideo.snippet.resourceId.videoId).map((video)=>{

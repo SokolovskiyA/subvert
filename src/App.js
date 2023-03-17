@@ -48,7 +48,7 @@ function App() {
           <Route path='/home' element={<HomePage videos={videos} episode={audio} />}/>
           <Route path='/videos' element={<VideoPage videos={videos}/>}/>
           <Route path='/audio' element={<AudioPage audio={audio} />}/>
-          <Route path='/merchendise' element={<MerchPage />}/>
+          <Route path='/store' element={<MerchPage />}/>
         </Routes>
       </BrowserRouter>
     </div>

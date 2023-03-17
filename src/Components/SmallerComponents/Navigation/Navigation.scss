@@ -1,7 +1,7 @@
 @use '../../../styles/colors' as *;
 
 .nav {
-    min-width: 35%;
+    min-width: 30%;
     background-color: $Color1-2;
     color: $Color2-2;
     display: flex;
@@ -9,5 +9,9 @@
     gap: 0.5rem;
     position: relative;
     font-family:'Carrois Gothic';
-    padding: 1rem;
+    justify-content: center;
+    &__link  {
+        width: 100%;
+        text-align: center;
+    }
 }
