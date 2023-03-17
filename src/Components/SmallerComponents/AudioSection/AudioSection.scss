@@ -7,15 +7,18 @@
     padding: 2rem;
     gap: 4rem;
     &__player {
-        background-color: $Color4-2;
+        background: rgba(242, 193, 74, 0.15);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 2px solid rgba(242, 193, 74, 0.66);
         border-radius: 1.5rem;
-        box-shadow: 5px 5px 5px;
         min-width: 30%;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         padding: 2%;
         gap: 1rem;
+        box-shadow: 5px 5px 5px;
     }
     &__link {
         position: absolute;
@@ -76,6 +79,6 @@
     &__controls {
         display: flex;
         flex-wrap: wrap;
-        width: 45%
+        width: 45%;
     }
 }

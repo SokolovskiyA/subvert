@@ -1,0 +1,13 @@
+@use '../../../styles/colors' as *;
+.video {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: $Color3-2;
+    &__player {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+    border-bottom: 2px solid $Color3-2;
+}

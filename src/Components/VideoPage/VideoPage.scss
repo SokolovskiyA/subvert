@@ -2,5 +2,20 @@
 
 .theatre {
     background-color: $Color3-1;
-    padding: 2rem;
+    &__item {
+        display: flex;
+        color: $Color3-2;
+        margin: 2rem 0;
+        border-color: black;
+    }
+    &__item:hover {
+        scale: 1.01;
+        transition: 1s;
+        border-top: 1px solid black;
+        box-shadow: 5px 5px 5px black;
+    }
+    &__logo {
+        width: 25%;
+        background-color: $Color1-1;
+    }
 }
