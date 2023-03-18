@@ -1,17 +1,18 @@
 @use '../../../styles/colors' as *;
 
 .nav {
-    min-width: 30%;
+    width: 30%;
     background-color: $Color1-2;
     color: $Color2-2;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 0.5rem;
     position: relative;
     font-family:'Carrois Gothic';
     justify-content: center;
-    &__link  {
-        width: 100%;
-        text-align: center;
+    overflow: hidden;
+    &__link {
+        min-width: max-content;
     }
 }

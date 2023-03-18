@@ -4,15 +4,7 @@
     background-color: $Color5-1;
     color: $Color1-2;
     display: flex;
-    width: 100%;
-    &__left {
-        width: 35%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: $Color1-2;
-        position: relative;
-    }
+    height: 20vh;
     &__right {
         width: 100%;
         display: flex;
@@ -20,8 +12,7 @@
         align-items: center;
     }
     &__logo {
-        width: 15%;
-        margin: 2rem
+        height: 70%;
     }
     &__close {
         position: absolute;

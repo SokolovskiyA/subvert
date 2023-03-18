@@ -4,6 +4,8 @@ import { useState } from 'react';
 import Button from '../Button/Button';
 import Navigation from '../Navigation/Navigation';
 import logo from '../../../Assets/Images/logo.png';
+import { AnimatePresence } from 'framer-motion';
+
 
 
 function Header() {
@@ -18,10 +20,11 @@ function Header() {
     }
     return (
         <div className="header">
-            {menuOpen ? <Navigation  animate={{x: 200}} click={closeMenu}/> : <Button classN="header__button" click={openMenu} text="Menu"/>}
-            <div className='header__right'>
-                <img src={logo} className='header__logo' alt="logo"/>
-            </div>
+            <Button classN="header__button" click={openMenu} text="Menu"/>
+            <AnimatePresence>{menuOpen && <Navigation click={closeMenu}/>}</AnimatePresence> 
+                <div className='header__right'>
+                    <img src={logo} className='header__logo' alt="logo"/>
+                </div>
         </div>
     )
 }
