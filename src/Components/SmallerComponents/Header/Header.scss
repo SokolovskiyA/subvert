@@ -13,15 +13,7 @@
     }
     &__logo {
         height: 70%;
-    }
-    &__close {
-        position: absolute;
-        bottom: 1rem;
-        right: 1rem;
-        font-family: 'fester';
-        font-weight: 600;
-        font-size: 0.8rem;
-        color: $Color2-2;
+        rotate: -5deg;
     }
     &__button {
         font-family: 'fester';

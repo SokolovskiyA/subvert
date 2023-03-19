@@ -4,15 +4,27 @@
     width: 30%;
     background-color: $Color1-2;
     color: $Color2-2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
     position: relative;
     font-family:'Carrois Gothic';
     justify-content: center;
     overflow: hidden;
+    display: grid;
+    grid-template-columns: 50% 50%;
     &__link {
         min-width: max-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid $Color2-1;
     }
+    &__link:hover {
+        border: 2px solid $Color2-2;
+    }
+    &__close {
+        position: absolute;
+        bottom: 0.5rem;
+        right: 0.5rem;
+        color: $Color2-2;
+    }
+    
 }

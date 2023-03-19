@@ -4,6 +4,7 @@ import kristin from '../../../Assets/Images/Kristin.png'
 import aaron from '../../../Assets/Images/Aaron.jpg'
 import Button from '../Button/Button'
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 function AboutSection() {
     const [style, setStyle] = useState({ display: 'none' });
@@ -19,8 +20,8 @@ function AboutSection() {
 
     return (
         <section id="about" className='about'>
-            <h2 className='about__head'>About Us</h2>
-            <h3 className='about__text'>Welcome to the Land of No Easy Answers. We seek to unravel the mysteries of the mind, the vagaries of the universe, and all the connections between. From learning to friend again in the post-pandemic, to combining neuroscience with sock puppets, The Subvert Podcast is here to help explain the chaos, with more chaos. Join hosts Kristin Rumohr and Aaron Stewart as we attempt to unravel the mysteries of the mind and your universe, subverting the disconnect between perceived realities.</h3>
+            <motion.h2 className='about__head'>About Us</motion.h2>
+            <motion.h3 className='about__text'>Welcome to the Land of No Easy Answers. We seek to unravel the mysteries of the mind, the vagaries of the universe, and all the connections between. From learning to friend again in the post-pandemic, to combining neuroscience with sock puppets, The Subvert Podcast is here to help explain the chaos, with more chaos. Join hosts Kristin Rumohr and Aaron Stewart as we attempt to unravel the mysteries of the mind and your universe, subverting the disconnect between perceived realities.</motion.h3>
             <Button click={openSection} classN="about__button" text="read more"/>
             <div style={style} className='about__more'>
                 <div className='about__host'>

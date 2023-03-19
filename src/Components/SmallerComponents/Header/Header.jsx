@@ -3,8 +3,8 @@ import './Header.scss'
 import { useState } from 'react';
 import Button from '../Button/Button';
 import Navigation from '../Navigation/Navigation';
-import logo from '../../../Assets/Images/logo.png';
-import { AnimatePresence } from 'framer-motion';
+import logo from '../../../Assets/Images/Sub.svg';
+import { AnimatePresence, motion } from 'framer-motion';
 
 
 
@@ -19,13 +19,13 @@ function Header() {
         setMenuOpen(false)
     }
     return (
-        <div className="header">
+        <motion.div initial={{height: "10vh"}} whileInView={{height: "15vh"}} className="header">
             <Button classN="header__button" click={openMenu} text="Menu"/>
             <AnimatePresence>{menuOpen && <Navigation click={closeMenu}/>}</AnimatePresence> 
                 <div className='header__right'>
                     <img src={logo} className='header__logo' alt="logo"/>
                 </div>
-        </div>
+        </motion.div>
     )
 }
 export default Header

@@ -2,7 +2,7 @@ import React from 'react'
 import './VideoPage.scss'
 import Video from '../SmallerComponents/Video/Video'
 import { useState } from 'react'
-import logo from '../../Assets/Images/logo.png'
+import logo from '../../Assets/Images/Sub.svg'
 import Header from '../SmallerComponents/Header/Header'
 
 function VideoPage({videos}) {

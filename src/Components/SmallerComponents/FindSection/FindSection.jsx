@@ -1,6 +1,6 @@
 import React from 'react'
 import './FindSection.scss'
-import logo from '../../../Assets/Images/logo.png'
+import logo from '../../../Assets/Images/Sub.svg'
 
 function FindSection() {
     return (

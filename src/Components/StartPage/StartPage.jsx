@@ -1,7 +1,7 @@
 import React from 'react'
 import './StartPage.scss'
 import { Link } from 'react-router-dom'
-import logo from '../../Assets/Images/logo.png'
+import logo from '../../Assets/Images/Sub.svg'
 
 function StartPage() {
     return (

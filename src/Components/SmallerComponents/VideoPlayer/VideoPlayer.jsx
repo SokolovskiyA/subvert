@@ -2,6 +2,7 @@ import React from 'react'
 import './VideoPlayer.scss'
 import Button from '../Button/Button'
 import { useNavigate } from "react-router-dom";
+import { motion } from 'framer-motion'
 
 
 function VideoPlayer({video}) {
@@ -11,7 +12,7 @@ function VideoPlayer({video}) {
         navigate('/videos')
     }
     return (
-        <section className="player"> 
+        <motion.section initial={{height: "40vh"}} whileInView={{height: "70vh"}} transition={{duration: 2}} className="player"> 
             <iframe 
                 className='player__video' 
                 width="560" 
@@ -27,7 +28,7 @@ function VideoPlayer({video}) {
                 <h2 className="player__title">{video.snippet.title}</h2>
             </div>
             <Button click={moreEpisodes} classN="player__link" text="see more episodes"/>
-        </section>
+        </motion.section>
     )
 }
 
