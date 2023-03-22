@@ -1,7 +1,9 @@
 @use '../../../styles/colors' as *;
+
 .player {
     background-color: $Color3-1;
     color: $Color3-2;
+    height: 40vh;
     display: flex;
     flex-wrap: wrap;
     position: relative;
@@ -27,8 +29,7 @@
         font-weight: 600;
         font-size: 0.8rem;
         color: $Color3-2;
-        margin: 1rem;
-        right: 0;
-        bottom: 0;
+        right: 2rem;
+        bottom: 2rem;
     }
 }

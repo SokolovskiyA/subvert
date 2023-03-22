@@ -12,7 +12,7 @@ function VideoPlayer({video}) {
         navigate('/videos')
     }
     return (
-        <motion.section initial={{height: "40vh"}} whileInView={{height: "70vh"}} transition={{duration: 2}} className="player"> 
+        <motion.section className="player"> 
             <iframe 
                 className='player__video' 
                 width="560" 

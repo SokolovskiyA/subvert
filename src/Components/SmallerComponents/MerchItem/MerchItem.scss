@@ -1,0 +1,15 @@
+@use '../../../styles/colors' as *;
+.item {
+    height: 100%;
+    width: fit-content;
+    background-color: $Color5-1;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    &__title {
+        font-family: 'fester';
+        font-weight: 600;
+        color: $Color3-1;
+        margin: 1rem;
+    }
+}

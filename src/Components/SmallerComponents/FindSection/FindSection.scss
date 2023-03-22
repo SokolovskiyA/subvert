@@ -1,30 +1,37 @@
 @use '../../../styles/colors' as *;
 
-
 .contact {
     background-color: $Color5-1;
     display: flex;
     justify-content: space-between;
-    height: 40vh;
+    height: 30vh;
+    position: relative;
     &__logo {
         width: 15%;
         margin: 2rem auto;
+        rotate: -5deg;
     }
     &__info { 
         background-color: $Color5-1;
         color: $Color5-2;
-        width: 60%;
+        width: 70%;
+    }
+    &__header {
+        width: fit-content;
+        margin: 1rem;
+        background-color: $Color5-1;
+    }
+    &__logo-container {
+        width: 100%;
         display: flex;
+        justify-content: space-between;
         flex-wrap: wrap;
     }
     &__link-logo {
-        width:100%;
+        width: auto;
+        height: 2rem;
     }
-    &__header {
-        width: 100%;
-    }
-    &__logo-container {
-        display: flex;
-        align-self: stretch;
+    &__link {
+        margin: 1rem 3rem;
     }
 }

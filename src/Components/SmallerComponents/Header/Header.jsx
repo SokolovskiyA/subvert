@@ -23,7 +23,7 @@ function Header() {
             <Button classN="header__button" click={openMenu} text="Menu"/>
             <AnimatePresence>{menuOpen && <Navigation click={closeMenu}/>}</AnimatePresence> 
                 <div className='header__right'>
-                    <img src={logo} className='header__logo' alt="logo"/>
+                    <motion.img initial={{height:0}} animate={{height: "70%", rotate: 360}} transition={{ duration: 1}} src={logo} className='header__logo' alt="logo"/>
                 </div>
         </motion.div>
     )

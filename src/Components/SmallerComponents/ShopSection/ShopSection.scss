@@ -1,7 +1,24 @@
 @use '../../../styles/colors' as *;
 
 .shop {
-    background-color: $Color5-1;
+    background-color: $Color5-2;
     padding: 2rem;
-    height: 49vh;
+    height: 40vh;
+    color: $Color2-2;
+    position: relative;
+    &__link {
+        position: absolute;
+        bottom: 2rem;  
+        right: 2rem;
+        font-family: 'fester';
+        font-weight: 600;
+        font-size: 0.8rem;
+        color: $Color2-2;
+    }
+    &__merch {
+        display: flex;
+        height: 80%;
+        gap: 2rem;
+        margin: 1rem;
+    }
 }
