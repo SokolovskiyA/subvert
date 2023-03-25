@@ -1,8 +1,9 @@
 @use '../../styles/colors' as*;
 
 .theatre {
-    background-color: $Color3-1;
+    background-color: $Color1-2;
     &__item {
+        background-color: $Color1-2;
         display: flex;
         color: $Color3-2;
         margin: 2rem 0;

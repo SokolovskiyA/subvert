@@ -1,10 +1,24 @@
 @use '../../styles/colors' as *;
 
 .start {
-    background-color: $Color2-1;
+    background-color: $Color1-1;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    &__button {
+        background-color: #C73E1D;
+        height: 20rem;
+        width: 20rem;
+        border-radius: 50%;
+        box-shadow: 10px 10px 10px $Color1-2;
+        border: none;
+        color: $Color1-1;
+        font-size: 1.5rem;
+        font-family: 'fester';
+        font-weight: 600;
+        cursor: pointer;
+        padding: 2rem;
+    }
 }

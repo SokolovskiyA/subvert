@@ -1,0 +1,30 @@
+@use '../../../styles/colors' as *;
+
+.framed {
+    display: flex;
+    width: 100%;
+    margin: auto;
+    justify-content: space-around;
+    padding-bottom: 2rem;
+    &__frame1, &__frame2 {
+        position: relative;
+        width: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__frame1 {
+        margin-top: -5%;
+    }
+    &__pic1, &__pic2 {
+        position: absolute;
+        width: 100%;
+    }
+    &__pic1 {
+        margin-top: 10%;
+    }
+    &__puppet1, &__puppet2 {
+        width: 28%;
+
+    }
+}

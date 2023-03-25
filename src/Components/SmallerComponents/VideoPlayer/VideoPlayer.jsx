@@ -3,6 +3,7 @@ import './VideoPlayer.scss'
 import Button from '../Button/Button'
 import { useNavigate } from "react-router-dom";
 import { motion } from 'framer-motion'
+import tv from '../../../Assets/puppets/tv.png'
 
 
 function VideoPlayer({video}) {
@@ -26,6 +27,7 @@ function VideoPlayer({video}) {
             <div className='player__text'>
                 <h2>Watch latest episode</h2>
                 <h2 className="player__title">{video.snippet.title}</h2>
+                <img className ="player__tv" src={tv} alt="tv" />
             </div>
             <Button click={moreEpisodes} classN="player__link" text="see more episodes"/>
         </motion.section>

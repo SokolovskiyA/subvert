@@ -1,6 +1,7 @@
 @use '../../../styles/colors' as *;
 
 .nav {
+    z-index: 2;
     width: 30%;
     background-color: $Color1-2;
     color: $Color2-2;
