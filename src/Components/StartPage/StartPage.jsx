@@ -1,6 +1,5 @@
 import React from 'react'
 import './StartPage.scss'
-import logo from '../../Assets/Images/Sub.svg'
 import Button from '../SmallerComponents/Button/Button'
 import { useNavigate } from 'react-router-dom'
 
