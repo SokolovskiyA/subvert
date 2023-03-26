@@ -27,7 +27,7 @@ function Header() {
     }
     
     return (
-        <motion.div initial={{height: "10vh"}} whileInView={{height: "20vh"}} transition={{duration: 1}} className="header">
+        <motion.div initial={{height: "15vh"}} whileInView={{height: "20vh"}} transition={{duration: 1}} className="header">
             <Button hover={setHover} classN="header__button" click={openMenu} text="Menu"/>
             <AnimatePresence>{menuOpen && <Navigation click={closeMenu}/>}</AnimatePresence> 
             <motion.img animate={{margin: mouseOnButton ? "3.5rem 0 0 -2rem" : "3.5rem 0 0 -6rem"}} src={puppet} className='header__puppet' alt="puppet"/>
