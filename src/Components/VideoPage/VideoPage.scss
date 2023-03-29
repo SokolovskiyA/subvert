@@ -3,11 +3,12 @@
 .theatre {
     background-color: $Color1-2;
     &__item {
+        padding: 1rem;
         background-color: $Color1-2;
         display: flex;
         color: $Color3-2;
-        margin: 2rem 0;
         border-color: black;
+        border-bottom: 3px solid $Color3-2;
     }
     &__item:hover {
         scale: 1.01;
@@ -16,7 +17,9 @@
         box-shadow: 5px 5px 5px black;
     }
     &__logo {
-        width: 25%;
+        width: 10vw;
+        height: 10vw;
         background-color: $Color1-1;
+        border-radius: 50%;
     }
 }

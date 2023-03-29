@@ -14,7 +14,7 @@ function HomePage({videos, episode}) {
             <Header />
             <VideoPlayer video={videos[0]}/>
             <AboutSection />
-            <AudioSection video={videos[0]} episode={episode} />
+            <AudioSection episode={episode} />
             <ShopSection />
             <FindSection />
         </div>

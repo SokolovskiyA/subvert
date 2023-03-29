@@ -6,9 +6,11 @@ import Button from '../Button/Button';
 import record from '../../../Assets/puppets/record.svg'
 import { motion } from 'framer-motion';
 import parse from 'html-react-parser';
+import sound from '../../../Assets/Images/volume.svg'
 
 
-function AudioSection({episode, video}) {
+function AudioSection({episode}) {
+    console.log(episode[0])
 const [playing, setPlaying] = useState(false)
 const navigate = useNavigate('/video')
 const videoDescription = episode[0].description.split('Welcome to the land of no easy answers')
@@ -67,14 +69,23 @@ audioRef.current.volume = event.target.value;
                             setCurrentTime(event.target.value);
                         }}
                     />
+                    <div className="play__times">
+                        <p className="play__times-value">00:00</p>
+                        <p className="play__times-value">00:00</p>
+                    </div>
                     <input
                         type="range"
                         min="0"
                         max="1"
-                        step="0.1"
+                        step="0.01"
                         value={volume}
                         onChange={handleVolumeChange}
                     />
+                    <div className="play__volume">
+                        <img className='play__vol' src={sound} alt="sound"/>
+                        <p className='play__times-value'>{Math.round(volume * 100)}</p>
+                    </div>
+                    
                     <motion.div initial={{backgroundColor: "#F97C42"}}  
                                 animate={{ backgroundColor: playing ? ["#F97C42", "#C73E1D", "#242F40", "#F2C14A", "#C6D858", "#522C53"] : "#none"}} 
                                 transition={{ delay: 0, duration: 2, repeat: playing && Infinity}}  
