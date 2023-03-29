@@ -6,8 +6,8 @@
     flex-wrap: wrap;
     position: relative;
     &__video {
-        width: 50%;
         height: auto;
+        width: 60%;
     }
     &__title {
         color: $Color3-2;
@@ -16,9 +16,9 @@
         font-size: 1.5rem;
     }
     &__text {
+        width: 40%;
         color: $Color3-2;
         padding: 2rem;
-        width: 50%;
         display: flex;
         flex-direction: column;
     }
@@ -32,7 +32,7 @@
         bottom: 2rem;
     }
     &__tv {
-        width: 50%;
+        width: 40%;
         margin: 0 4rem;
     }
 }
