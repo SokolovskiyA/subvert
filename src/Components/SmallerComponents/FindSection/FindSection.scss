@@ -4,9 +4,9 @@
     background-color: $Color5-1;
     display: flex;
     justify-content: space-between;
-    position: relative;
+    height: 15vh;
     &__logo {
-        width: 15%;
+        width: 20%;
         margin: 2rem auto;
         rotate: -5deg;
     }
@@ -14,24 +14,153 @@
         background-color: $Color5-1;
         color: $Color5-2;
         width: 70%;
+        height: 15vh;
+        position: relative;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+        justify-content: center;
     }
     &__header {
-        width: fit-content;
         background-color: $Color5-1;
-        margin-left: 0;
-    }
-    &__logo-container {
-        width: 50%;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2rem;
+        margin: 1rem;
+        z-index: 2;
+        align-self: flex-start;
     }
     &__link-logo {
         width: auto;
         height: 2rem;
     }
+    &__link {
+        position: absolute;
+        top: 0;
+        left:0;
+    }
 }
+
+.y {
+animation: y 13s linear infinite alternate;
+}
+
+@keyframes x {
+100% {
+    transform: translateX( calc(70vw - #{2rem}));
+}
+}
+
+@keyframes y {
+100% {
+    transform: translateY(calc(15vh - #{2rem}));
+}
+}
+
+.logo1 {
+    animation: y 7s linear infinite alternate;
+}
+.logo2 {
+    animation: y 9s linear 0.5s infinite alternate;
+}
+.logo3 {
+    animation: y 10s linear 1s infinite alternate;
+}
+.logo4 {
+    animation: y 10s linear 1.5s infinite alternate;
+}
+.logo5 {
+    animation: y 9s linear 2s infinite alternate;
+}
+.logo6 {
+    animation: y 8s linear 2.5s infinite alternate;
+}
+.logo7 {
+    animation: y 6s linear 3s infinite alternate;
+}
+.logo8 {
+    animation: y 5s linear 3.5s infinite alternate;
+}
+.logo9 {
+    animation: y 7s linear 4.5s infinite alternate;
+}
+.logo10 {
+    animation: y 5s linear 4s infinite alternate;
+}
+.logo11 {
+    animation: 4s linear 5s infinite alternate;
+}
+.logo12  {
+    animation: y 8s linear 5.5s infinite alternate;
+}
+.logo13 {
+    animation: y 7s linear 6s infinite alternate;
+}
+.logo14 {
+    animation: y 6s linear 6.5s infinite alternate;
+}
+.logo15 {
+    animation: y 4s linear 7s infinite alternate;
+}
+.logo16 {
+    animation: y 8s linear 7.5s infinite alternate;
+}
+.logo17 {
+    animation: y 5s linear 8s infinite alternate;
+}
+.logo18 {
+    animation: y 6s linear 9s infinite alternate;
+}
+
+
+.link1 {
+    animation: x 14s linear infinite alternate;
+}
+.link2 {
+    animation: x 12s linear 0.5s infinite alternate;
+}
+.link3 {
+    animation: x 12s linear 1s infinite alternate;
+}
+.link4 {
+    animation: x 11s linear 1.5s infinite alternate;
+}
+.link5 {
+    animation: x 12s linear 2s infinite alternate;
+}
+.link6 {
+    animation: x 13s linear 2.5s infinite alternate;
+}
+.link7 {
+    animation: x 14s linear 3s infinite alternate;
+}
+.link8 {
+    animation: x 15s linear 3.5s infinite alternate;
+}
+.link9 {
+    animation: x 16s linear 4.5s infinite alternate;
+}
+.link10 {
+    animation: x 17s linear 4s infinite alternate;
+}
+.link11 {
+    animation: x 11s linear 5s infinite alternate;
+}
+.link12  {
+    animation: x 15s linear 5.5s infinite alternate;
+}
+.link13 {
+    animation: x 14s linear 6s infinite alternate;
+}
+.link14 {
+    animation: x 15s linear 6.5s infinite alternate;
+}
+.link15 {
+    animation: x 16s linear 7s infinite alternate;
+}
+.link16 {
+    animation: x 12s linear 7.5s infinite alternate;
+}
+.link17 {
+    animation: x 14s linear 8s infinite alternate;
+}
+.link18 {
+    animation: x 13s linear 9s infinite alternate;
+}
+
+
