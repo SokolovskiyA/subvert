@@ -10,7 +10,6 @@ import sound from '../../../Assets/Images/volume.svg'
 
 
 function AudioSection({episode}) {
-    console.log(episode[0])
 const [playing, setPlaying] = useState(false)
 const navigate = useNavigate('/video')
 const videoDescription = episode[0].description.split('Welcome to the land of no easy answers')
@@ -50,8 +49,7 @@ audioRef.current.volume = event.target.value;
             <div className="play">
                 <div className='play__record'>
                     <motion.img animate={{rotate: playing ? "360deg" : "0"}} transition={{duration: 2, repeat: playing && Infinity}} className='play__record-img' src={record} alt="record" />
-                </div>
-                <div className='play__controls'>
+                    <div className='play__controls'>
                     <audio
                         ref={audioRef}
                         src={episode[0].audio_url}
@@ -85,20 +83,22 @@ audioRef.current.volume = event.target.value;
                         <img className='play__vol' src={sound} alt="sound"/>
                         <p className='play__times-value'>{Math.round(volume * 100)}</p>
                     </div>
-                    
-                    <motion.div initial={{backgroundColor: "#F97C42"}}  
-                                animate={{ backgroundColor: playing ? ["#F97C42", "#C73E1D", "#242F40", "#F2C14A", "#C6D858", "#522C53"] : "#none"}} 
-                                transition={{ delay: 0, duration: 2, repeat: playing && Infinity}}  
-                                className ='play__element1'></motion.div>
-                    <motion.div initial={{backgroundColor: "#F97C42"}} 
-                                animate={{ backgroundColor: playing ? ["#F97C42", "#C73E1D", "#242F40", "#F2C14A", "#C6D858", "#522C53"] : "#none"}} 
-                                transition={{ delay: 0.5, duration: 2, repeat: playing && Infinity}}  
-                                className ='play__element2'></motion.div>
-                    <motion.div initial={{backgroundColor: "#F97C42"}}
-                                animate={{ backgroundColor: playing ? ["#F97C42", "#C73E1D", "#242F40", "#F2C14A", "#C6D858", "#522C53"] : "#none"}} 
-                                transition={{ delay: 1, duration: 2, repeat: playing && Infinity}} 
-                                className ='play__element3'></motion.div>
-                </div>
+                        <div className='play__lights'>
+                            <motion.div initial={{backgroundColor: "#F97C42"}}  
+                                        animate={{ backgroundColor: playing ? ["#F97C42", "#C73E1D", "#242F40", "#F2C14A", "#C6D858", "#522C53"] : "#none"}} 
+                                        transition={{ delay: 0, duration: 2, repeat: playing && Infinity}}  
+                                        className ='play__element1'></motion.div>
+                            <motion.div initial={{backgroundColor: "#F97C42"}} 
+                                        animate={{ backgroundColor: playing ? ["#F97C42", "#C73E1D", "#242F40", "#F2C14A", "#C6D858", "#522C53"] : "#none"}} 
+                                        transition={{ delay: 0.5, duration: 2, repeat: playing && Infinity}}  
+                                        className ='play__element2'></motion.div>
+                            <motion.div initial={{backgroundColor: "#F97C42"}}
+                                        animate={{ backgroundColor: playing ? ["#F97C42", "#C73E1D", "#242F40", "#F2C14A", "#C6D858", "#522C53"] : "#none"}} 
+                                        transition={{ delay: 1, duration: 2, repeat: playing && Infinity}} 
+                                        className ='play__element3'></motion.div>
+                        </div>
+                    </div>
+                </div>              
             </div>
             <div className='audio__text'>
                 <h2 className="audio__header">Listen latest episode</h2>

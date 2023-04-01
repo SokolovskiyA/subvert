@@ -13,7 +13,6 @@ function AudioPage({audio}) {
             <ul>
                 {audio.map((episode) => {
                     const description = episode.description.split('Welcome to the land of no easy answers')[0] + '</p>'
-                    console.log(description)
                     return (
                         <li key={episode.id}>
                             <h2>{episode.title}</h2>

@@ -8,8 +8,6 @@ import FramedPuppet from '../FramedPuppet/FramedPuppet';
 
 function AboutSection() {
     const [ about, setAbout] = useState(false);
-    console.log(about)
-    //write event function
     const sectionOpener = (e) => {
         e.preventDefault();
         setAbout(!about);

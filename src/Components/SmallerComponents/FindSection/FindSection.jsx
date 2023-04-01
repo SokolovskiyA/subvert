@@ -19,12 +19,14 @@ import goodpods from '../../../Assets/logos/goodpods.jpg'
 import rss from '../../../Assets/logos/rss.svg'
 import buzz from '../../../Assets/logos/buzz.png'
 import you from '../../../Assets/logos/you.svg'
+import pippetNet from '../../../Assets/puppets/puppetNet.svg'
 
 function FindSection() {
     return (
         <div className='contact'>
             <img className='contact__logo' src={logo} alt='logo' />
             <div className='contact__info'>
+                <img className="contact__puppet" src={pippetNet} alt="puppet with net"/>
                 <h2 className='contact__header'>Find Us Here</h2>
                 <a href="https://podcasts.apple.com/ca/podcast/the-subvert/id1599961653" className="contact__link link1"><img src={apple} alt="logo-link" className="contact__link-logo logo1"/></a>
                 <a href="https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkcy5idXp6c3Byb3V0LmNvbS8xODg5ODQyLnJzcw==" className="contact__link link2"><img src={google} alt="logo-link y" className="contact__link-logo logo2"/></a>
