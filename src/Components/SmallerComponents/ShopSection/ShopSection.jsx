@@ -17,9 +17,6 @@ function ShopSection() {
             <Button click={moreMerch} classN="shop__link" text="buy more merch"/>
             <div className="shop__merch">
                 <MercghItem/>
-                <MercghItem/>
-                <MercghItem/>
-                <MercghItem/>
             </div>
         </div>
     )

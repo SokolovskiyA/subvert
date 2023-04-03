@@ -13,11 +13,9 @@ function VideoPlayer({video}) {
         navigate('/videos')
     }
     return (
-        <motion.section className="player"> 
+        <section className="player"> 
             <iframe 
-                className='player__video' 
-                width="560" 
-                height="315" 
+                className='player__video'   
                 src={`https://www.youtube.com/embed/${video.snippet.resourceId.videoId}`} 
                 title="YouTube video player" 
                 frameBorder="0"
@@ -25,12 +23,11 @@ function VideoPlayer({video}) {
                 allowFullScreen>
             </iframe>
             <div className='player__text'>
-                <h2>Watch latest episode</h2>
                 <h2 className="player__title">{video.snippet.title}</h2>
                 <motion.img animate={{rotate: [-5, 5, -5, 5, -5]}} transition={{duration: 4 ,repeat: Infinity }} className ="player__tv" src={tv} alt="tv"/>
             </div>
             <Button click={moreEpisodes} classN="player__link" text="see more episodes"/>
-        </motion.section>
+        </section>
     )
 }
 
