@@ -1,26 +1,38 @@
 @use '../../../styles/colors' as *;
+@use '../../../styles/screens' as *;
 
 .about {
+    position: relative;
     background-color: $Color2-1;
     color: $Color2-2;
-    padding: 2rem 2rem 4rem;
-    position: relative;
+    padding: 1rem;
+    @include tablet {
+        padding: 2rem 2rem 4rem;
+    }
     &__initial {
-        margin: 1rem 1rem 5rem;
-        width: 90%;
+        @include tablet {
+            margin: 1rem 1rem 5rem;
+            width: 90%;
+        }
     }
     &__head { 
         margin-bottom: 2rem;
     }
     &__text {
+        font-size: 1rem;
         line-height: 1.4rem;
-        width: 90%;
+        @include tablet {
+            width: 90%;
+        }
+        
     }
     &__host {
-        width: 48%;
+        @include tablet {
+            width: 48%;
+            gap: 1rem;
+        }
         display: flex;
         flex-direction: column;
-        gap: 1rem;
     }
     &__button {
         font-family: 'fester';
@@ -35,7 +47,12 @@
     &__more {
         position: relative;
         display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 1rem;
+        @include tablet {
+            flex-direction: row;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
     }
 }

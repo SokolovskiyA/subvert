@@ -1,4 +1,6 @@
 @use './styles/colors' as *;
+@use './styles/screens' as *;
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -14,7 +16,11 @@ h1,h2,h3,h4,h5,h6 {
 }
 p {
     font-family: 'Carrois Gothic';
-    margin: 1rem;
+    margin: 0 1rem;
+    @include tablet {
+        margin: 1rem;
+    }
+    
 }
 audio {
     margin: 0;

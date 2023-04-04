@@ -1,20 +1,32 @@
 @use '../../../styles/colors' as *;
+@use '../../../styles/screens' as *;
 
 .contact {
+    @include tablet {
+        flex-direction: row;
+        height: 15vh;
+    }
     background-color: $Color5-1;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    height: 15vh;
     position: relative;
     &__logo {
-        width: 20%;
-        margin: 2rem auto;
+        @include tablet {
+            width: 20%;
+            margin: 2rem auto;
+        }
         rotate: -5deg;
+        width: 30%;
+        margin: 1rem auto
     }
     &__info { 
+        @include tablet {
+            width: 70%;
+        }
         background-color: $Color5-1;
         color: $Color5-2;
-        width: 70%;
+        width: 100%;
         height: 15vh;
         position: relative;
         display: flex;
@@ -37,21 +49,28 @@
     }
     &__puppet {
         position: absolute;
-        top: 0;
-        left: -5rem;
         height: 100%;
+        left: -1rem;
+        rotate: 90deg;
+        top: -70%;
+        @include tablet {
+            rotate: 0deg;
+            top: 0;
+            left: -5rem;
+        }
     }
 
 }
 
-.y {
-animation: y 13s linear infinite alternate;
+@keyframes table {
+    100% {
+        transform: translateX( calc(100vw - #{2rem}));
+    }
 }
-
 @keyframes x {
-100% {
-    transform: translateX( calc(70vw - #{2rem}));
-}
+    100% {
+        transform: translateX(calc(70vw - #{2rem}));
+    }
 }
 
 @keyframes y {
@@ -91,7 +110,7 @@ animation: y 13s linear infinite alternate;
     animation: y 5s linear 4s infinite alternate;
 }
 .logo11 {
-    animation: 4s linear 5s infinite alternate;
+    animation: y 4s linear 5s infinite alternate;
 }
 .logo12  {
     animation: y 8s linear 5.5s infinite alternate;
@@ -117,58 +136,131 @@ animation: y 13s linear infinite alternate;
 
 
 .link1 {
-    animation: x 14s linear infinite alternate;
+    animation: table 14s linear infinite alternate;
+    @include tablet {
+        animation-name: x;
+    }
 }
+
 .link2 {
-    animation: x 12s linear 0.5s infinite alternate;
+    animation: table 12s linear 0.5s infinite alternate;
+    @include tablet {
+        animation-name: x;
+    }
 }
+
 .link3 {
-    animation: x 12s linear 1s infinite alternate;
+    animation: table 12s linear 1s infinite alternate;
+    @include tablet {
+        animation-name: x;
+    }
 }
+
 .link4 {
-    animation: x 11s linear 1.5s infinite alternate;
+    animation: table 11s linear 1.5s infinite alternate;
+    @include tablet {
+        animation-name: x;
+    }
 }
+
 .link5 {
-    animation: x 12s linear 2s infinite alternate;
+
+    animation: table 12s linear 2s infinite alternate;
+    @include tablet {
+        animation-name: x;
+    }
 }
+
 .link6 {
-    animation: x 13s linear 2.5s infinite alternate;
+    animation: table 13s linear 2.5s infinite alternate;
+    @include tablet {
+        animation-name: x;
+    }
 }
+
 .link7 {
-    animation: x 14s linear 3s infinite alternate;
+    animation: table 14s linear 3s infinite alternate;
+    @include tablet {
+        animation-name: x;
+    }
 }
+
 .link8 {
-    animation: x 15s linear 3.5s infinite alternate;
+    animation: table 15s linear 3.5s infinite alternate;
+    @include tablet {
+        animation-name: x;
+    }
 }
+
 .link9 {
-    animation: x 16s linear 4.5s infinite alternate;
+    animation: table 16s linear 4.5s infinite alternate;
+    @include tablet {
+        animation-name: x;
+    }
 }
+
 .link10 {
-    animation: x 17s linear 4s infinite alternate;
+    animation: table 17s linear 4s infinite alternate;
+    @include tablet {
+        animation-name: x;
+    }
 }
+
 .link11 {
-    animation: x 11s linear 5s infinite alternate;
+    animation: table 11s linear 5s infinite alternate;
+    @include tablet {
+        animation-name: x;
+    }
 }
+
 .link12  {
-    animation: x 15s linear 5.5s infinite alternate;
+    animation: table 15s linear 5.5s infinite alternate;
+    @include tablet {
+        animation-name: x;
+    }
 }
+
 .link13 {
-    animation: x 14s linear 6s infinite alternate;
+    animation: table 14s linear 6s infinite alternate;
+    @include tablet {
+        animation-name: x;
+    }
 }
+
 .link14 {
-    animation: x 15s linear 6.5s infinite alternate;
+    animation: table 15s linear 6.5s infinite alternate;
+    @include tablet {
+        animation-name: x;
+    }
 }
 .link15 {
-    animation: x 16s linear 7s infinite alternate;
+    animation: table 16s linear 7s infinite alternate;
+    @include tablet {
+        animation-name: x;
+    }
 }
+
 .link16 {
-    animation: x 12s linear 7.5s infinite alternate;
+    animation: table 12s linear 7.5s infinite alternate;
+    @include tablet {
+        animation-name: x;
+    }
 }
+
+
 .link17 {
-    animation: x 14s linear 8s infinite alternate;
+    animation: table 14s linear 8s infinite alternate;
+    @include tablet {
+        animation-name: x;
+    }
 }
-.link18 {
-    animation: x 13s linear 9s infinite alternate;
+
+
+.link18 {  
+    animation: table 13s linear 9s infinite alternate;
+    @include tablet {
+        animation-name: x;
+    }
 }
 
 
