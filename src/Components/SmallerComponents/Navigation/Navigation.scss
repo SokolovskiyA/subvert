@@ -2,7 +2,7 @@
 
 .nav {
     z-index: 2;
-    width: 30%;
+    width: 'fit-content';
     background-color: $Color1-2;
     color: $Color2-2;
     padding: 1rem 0;
@@ -15,11 +15,14 @@
     gap: 0.5rem;
 
     &__link {
-        display: flex;
-        align-items: center;
-        justify-content: center;
         border: 2px solid $Color2-1;
+        display: flex;
+        justify-content: center;
+    }
+    &__span {
+        opacity: 0;
         min-width: max-content;
+        padding: 0 2rem;
     }
     &__link:hover {
         background-color: $Color2-2;
