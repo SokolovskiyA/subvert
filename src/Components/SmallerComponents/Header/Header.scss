@@ -1,20 +1,16 @@
 @use '../../../styles/colors' as *;
+@use '../../../styles/screens' as *; 
 
 .header {
     background-color: $Color5-1;
     color: $Color1-2;
     display: flex;
+    justify-content: center;
+    align-items: center;
     height: 20vh;
     position: relative;
-    &__right {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
     &__logo {
-        rotate: -5deg;
-        height: 75%;
+        height: 60%;
     }
     &__button {
         font-family: 'fester';
@@ -26,8 +22,11 @@
         left: 2rem;
     }
     &__puppet {
+        position: absolute;
+        top: 0;
+        left: 0;
         height: 70%;
         rotate: 90deg;
-        margin: 3.5rem 0 0 -4rem;
     }
+    
 }

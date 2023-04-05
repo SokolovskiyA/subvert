@@ -1,19 +1,20 @@
 @use '../../../styles/colors' as *;
 
 .nav {
-    z-index: 2;
+    z-index: 1;
     width: 'fit-content';
     background-color: $Color1-2;
     color: $Color2-2;
     padding: 1rem 0;
-    position: relative;
+    position: absolute;
+    top:0; 
+    left: 0;
+    height: 100%;
     font-family:'Carrois Gothic';
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 0.5rem;
-
     &__link {
         border: 2px solid $Color2-1;
         display: flex;
@@ -34,5 +35,4 @@
         right: 0.5rem;
         color: $Color2-2;
     }
-    
 }
