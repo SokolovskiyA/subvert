@@ -6,24 +6,24 @@
     background-color: $Color1-2;
     color: $Color2-2;
     padding: 1rem 0;
-    position: absolute;
-    top:0; 
-    left: 0;
-    height: 100%;
     font-family:'Carrois Gothic';
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 0.5rem;
+    height: 20vh;
+
     &__link {
         border: 2px solid $Color2-1;
         display: flex;
         justify-content: center;
+        background-color: transparent;
     }
     &__span {
         opacity: 0;
         min-width: max-content;
         padding: 0 2rem;
+        background-color: transparent;
     }
     &__link:hover {
         background-color: $Color2-2;

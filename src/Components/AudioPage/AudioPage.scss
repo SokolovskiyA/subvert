@@ -1,4 +1,38 @@
-.audio-player {
-    width: 10rem;
-    height: 10rem;
-}
+@use '../../Styles/colors' as *;
+@use '../../Styles/screens' as *;
+
+.audioPage {
+    background-color: $Color2-1;
+    color: $Color3-2;
+    display: flex;
+    flex-direction: column;
+    &__playing-title {
+        text-align: center;
+        font-size: 1.5rem;
+        margin: 1rem 0;
+        @include tablet {
+            font-size: 2rem;
+            margin: 2rem 0;
+        }
+    }
+    &__description {
+        text-align: center;
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        @include tablet {
+            font-size: 1.2rem;
+            margin: 2rem 0;
+        }
+    }
+    &__more {
+        background-color: $Color4-1;
+    }
+    &__list {
+        display: flex;
+        overflow-x: hidden;
+    }
+    &__item {
+        list-style: none;
+
+    }
+};

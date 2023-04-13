@@ -15,9 +15,7 @@ import AudioPage from './Components/AudioPage/AudioPage';
 function App() {
   const [ videos, setVideos] = useState([])
   const [ audio, setAudio] = useState([])
-  
   const apiKey="AIzaSyDE8Zv4QfTBpbzCQy4cBhzGWRI2nxYVQrs"
-  
   const fetchAudio = () => {
     axios.get(`https://www.buzzsprout.com/api/1889842/episodes.json?api_token=a4d806c2a852bdb2acfac0e5aa554bdc`)
       .then(response => {

@@ -5,12 +5,12 @@
     background-color: $Color5-1;
     color: $Color1-2;
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 20vh;
     position: relative;
+    min-height: 20vh;
     &__logo {
-        height: 60%;
+        height: 12vh;
+        margin: auto;
     }
     &__button {
         font-family: 'fester';
