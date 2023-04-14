@@ -4,13 +4,26 @@ import record from '../../../Assets/puppets/record.svg'
 import { motion } from 'framer-motion';
 import { useState, useRef } from 'react';
 import Button from '../Button/Button';
+import './Player.scss'
 
 function Player({episode}) {
+    
     const [playing, setPlaying] = useState(false)
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
     const [volume, setVolume] = useState(1);
     const audioRef = useRef(null);
+
+    const formatTime = (time) => {
+        const minutes = Math.floor(time / 60);
+        const seconds = Math.floor(time % 60);
+        if (seconds < 10) {
+            return `${minutes}:0${seconds}`;
+        } else {
+            return `${minutes}:${seconds}`;
+        }   
+    }
+
     const handlePlayPause = () => {
         if (playing) {
             audioRef.current.pause();
@@ -20,10 +33,10 @@ function Player({episode}) {
         setPlaying(!playing);
         };
         const handleTimeUpdate = () => {
-        setCurrentTime(audioRef.current.currentTime);
+            setCurrentTime(audioRef.current.currentTime);
         };
         const handleDurationChange = () => {
-        setDuration(audioRef.current.duration);
+            setDuration(audioRef.current.duration);
         };
         const handleVolumeChange = (event) => {
         setVolume(event.target.value);
@@ -53,8 +66,8 @@ function Player({episode}) {
                 }}
             />
             <div className="play__times">
-                <p className="play__times-value">{currentTime}</p>
-                <p className="play__times-value">{duration}</p>
+                <p className="play__times-value">{formatTime(currentTime)}</p>
+                <p className="play__times-value">{formatTime(duration)}</p>
             </div>
             <input
                 type="range"

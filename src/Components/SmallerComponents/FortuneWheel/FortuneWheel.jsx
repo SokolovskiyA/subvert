@@ -10,8 +10,8 @@ function FortuneWheel({chooseRandom}) {
             <h2 className='random__header'>explore more episodes</h2>
             <img src={pup} className='random__pup'  alt="puppet"/>
             <div className='random__wheel-div'>
-                <button  onClick={chooseRandom} className='random__button'>Play Randome</button>
-                <motion.img className='random__wheel' alt="wheel" src={wheel}/>
+                <button  onClick={ e => chooseRandom(e)} className='random__button'>Play Randome</button>
+                <motion.img animate={{rotate: 360}} transition={{ ease: "linear" , duration: 15, repeat: Infinity }} className='random__wheel' alt="wheel" src={wheel}/>
             </div>
         </div>
     )

@@ -5,9 +5,29 @@ import { useState } from 'react'
 import logo from '../../Assets/Images/Sub.svg'
 import Header from '../SmallerComponents/Header/Header'
 import FortuneWheel from '../SmallerComponents/FortuneWheel/FortuneWheel'
+import axios from 'axios'
+import { useEffect } from 'react'
 
-function VideoPage({videos}) {
-    const [activeVideo, setActiveVideo] = useState(videos[0])
+function VideoPage() {
+    const [videos, setVideos] = useState([])
+    const [activeVideo, setActiveVideo] = useState({})
+    const fetchVideos = async () => {
+        try {
+            const response = await axios.get(`https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=100&playlistId=PL4D0WL2ASB5zo56UHBVrfZ04jsG_EuQfj&key=AIzaSyDE8Zv4QfTBpbzCQy4cBhzGWRI2nxYVQrs`);
+            const sorted = response.data.items
+            sorted.sort((a,b)=> Date.parse(b.snippet.publishedAt) -  Date.parse(a.snippet.publishedAt))
+            setVideos(sorted.filter(function(video) { 
+                return video.snippet.title !== 'Deleted video';
+            }))
+            setActiveVideo(sorted[0])
+        } catch (error) {
+            console.log('there was an error fetchin video')
+        }
+    }
+    useEffect(() => {       
+        fetchVideos()
+    }, [])
+
     const chooseEpisode = (e, video) => {
         e.preventDefault()
         setActiveVideo(video)
@@ -15,8 +35,13 @@ function VideoPage({videos}) {
     const chooseRandom = (e) => {
         e.preventDefault()
         const rand = videos[~~(Math.random() * videos.length)]
+        console.log(rand)
         setActiveVideo(rand)
     }
+
+    if ( videos.length === 0 ) 
+    return <div> Loading... </div>
+    else
     return (
         <div className="theatre">
             <Header/>
@@ -24,9 +49,6 @@ function VideoPage({videos}) {
             <FortuneWheel chooseRandom={chooseRandom}/>
             <ul className="theatre__library">
                 {videos
-                    .filter(function(video) { 
-                        return video.snippet.title !== 'Deleted video';
-                    })
                     .filter(video => video.snippet.resourceId.videoId !== activeVideo.snippet.resourceId.videoId)
                     .map((video)=>{
                         return (
