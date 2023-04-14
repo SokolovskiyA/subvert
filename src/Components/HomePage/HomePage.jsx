@@ -1,5 +1,4 @@
 import React from 'react'
-import './HomePage.scss'
 import Header from '../SmallerComponents/Header/Header'
 import VideoPlayer from '../SmallerComponents/VideoPlayer/VideoPlayer'
 import AboutSection from '../SmallerComponents/AboutSection/AboutSection'
