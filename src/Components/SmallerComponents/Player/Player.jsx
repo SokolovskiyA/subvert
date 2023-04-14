@@ -2,18 +2,16 @@ import React from 'react'
 import sound from '../../../Assets/Images/volume.svg'
 import record from '../../../Assets/puppets/record.svg'
 import { motion } from 'framer-motion';
-import { useState, useRef } from 'react';
+import { useState, useRef} from 'react';
 import Button from '../Button/Button';
 import './Player.scss'
 
 function Player({episode}) {
-    
     const [playing, setPlaying] = useState(false)
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
     const [volume, setVolume] = useState(1);
     const audioRef = useRef(null);
-
     const formatTime = (time) => {
         const minutes = Math.floor(time / 60);
         const seconds = Math.floor(time % 60);
@@ -23,7 +21,6 @@ function Player({episode}) {
             return `${minutes}:${seconds}`;
         }   
     }
-
     const handlePlayPause = () => {
         if (playing) {
             audioRef.current.pause();
@@ -42,7 +39,7 @@ function Player({episode}) {
         setVolume(event.target.value);
         audioRef.current.volume = event.target.value;
         };
-        
+
     return (
         <div className="play">
         <div className='play__record'>

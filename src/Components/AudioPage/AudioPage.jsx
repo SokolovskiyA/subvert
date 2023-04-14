@@ -8,13 +8,13 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function AudioPage() {
-
     const [ audio, setAudio] = useState([])
     const [activeAudio, setActiveAudio] = useState({})
     
     const chooseEpisode = (e, item) => {
         e.preventDefault()
         setActiveAudio(item)
+
     }
     const chooseRandom = (e) => {
         e.preventDefault()
@@ -50,7 +50,8 @@ function AudioPage() {
             <div className='audioPage__more'>
                 <FortuneWheel chooseRandom={chooseRandom}/>
                 <ul className='audioPage__list'>
-                    {audio.map((episode) => {
+                    {audio.filter(audio => audio !== activeAudio)
+                            .map((episode) => {
                         return (
                             <li onClick={e => chooseEpisode(e, episode)} className='audioPage__item' key={episode.id}>
                                 <h2>{episode.title}</h2>
