@@ -35,7 +35,6 @@ function VideoPage() {
     const chooseRandom = (e) => {
         e.preventDefault()
         const rand = videos[~~(Math.random() * videos.length)]
-        console.log(rand)
         setActiveVideo(rand)
     }
 
@@ -51,10 +50,12 @@ function VideoPage() {
                 {videos
                     .filter(video => video.snippet.resourceId.videoId !== activeVideo.snippet.resourceId.videoId)
                     .map((video)=>{
+                        const date = new Date(video.snippet.publishedAt).toLocaleDateString('en-us', { year:"numeric", month:"long", day:"numeric"}) 
                         return (
                             <li onClick={e => chooseEpisode(e, video)} className="theatre__item" key={video.snippet.resourceId.VideoId}>
                                 <img className="theatre__logo" src={logo} alt="logo" />
                                 <h2 className="theatre__item-name">{video.snippet.title}</h2>
+                                <p className="theatre__date">{date}</p>
                             </li>
                         )
                     })

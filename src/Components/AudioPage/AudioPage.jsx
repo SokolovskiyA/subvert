@@ -6,6 +6,7 @@ import parse from 'html-react-parser';
 import FortuneWheel from '../SmallerComponents/FortuneWheel/FortuneWheel';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import record from '../../Assets/puppets/record.svg'
 
 function AudioPage() {
     const [ audio, setAudio] = useState([])
@@ -19,7 +20,6 @@ function AudioPage() {
     const chooseRandom = (e) => {
         e.preventDefault()
         const rand = audio[~~(Math.random() * audio.length)]
-        console.log(rand)
         setActiveAudio(rand)
     }
     const fetchAudio = async () => {
@@ -52,9 +52,12 @@ function AudioPage() {
                 <ul className='audioPage__list'>
                     {audio.filter(audio => audio !== activeAudio)
                             .map((episode) => {
+                                const date = new Date(episode.published_at).toLocaleDateString('en-us', { year:"numeric", month:"long", day:"numeric"})
                         return (
                             <li onClick={e => chooseEpisode(e, episode)} className='audioPage__item' key={episode.id}>
-                                <h2>{episode.title}</h2>
+                                <img className='audioPage__image' src={record} alt="record"/>
+                                <h2 className='audioPage__item-title'>{episode.title}</h2>
+                                <p className="audioPage__date">{date}</p>
                             </li>
                         )
                     })}
