@@ -8,11 +8,12 @@ function StartPage() {
     const start = () => {
         navigate('/home')
     }
-
+    const welcome = `Welcome!
+    To the land of...`
     return (
         <div className="start">
             {/*<img className='start__logo' alt="logo" src={logo}/>*/}
-            <Button click={start} text='to the land of no easy answers' classN="start__button"/>
+            <Button click={start} text={welcome} classN="start__button"/>
         </div>
     )
 }

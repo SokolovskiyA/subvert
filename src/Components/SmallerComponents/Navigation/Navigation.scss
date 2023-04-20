@@ -2,7 +2,6 @@
 
 .nav {
     z-index: 1;
-    width: 'fit-content';
     background-color: $Color1-2;
     color: $Color2-2;
     padding: 1rem 0;
@@ -12,7 +11,6 @@
     justify-content: center;
     gap: 0.5rem;
     height: 20vh;
-
     &__link {
         border: 2px solid $Color2-1;
         display: flex;
@@ -22,7 +20,7 @@
     &__span {
         opacity: 0;
         min-width: max-content;
-        padding: 0 2rem;
+        padding: 0 3.25rem;
         background-color: transparent;
     }
     &__link:hover {

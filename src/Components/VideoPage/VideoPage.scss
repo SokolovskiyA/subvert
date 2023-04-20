@@ -8,25 +8,12 @@
         @include tablet {
             padding: 1rem;
         }
-        background-color: $Color1-2;
-        display: flex;
         color: $Color3-2;
-        border-color: black;
-        border-bottom: 3px solid $Color3-2;
+        display: flex;
+        width: 70%;
+        margin: auto;
     }
-    &__item:hover {
-        scale: 1.01;
-        transition: 1s;
-        border-top: 1px solid black;
-        box-shadow: 5px 5px 5px black;
-    }
-    &__logo {
-        width: 7rem;
-        height: 7rem;
-        margin: 1.5rem;
-        background-color: $Color1-1;
-        border-radius: 50%;
-    }
+
     &__item-name {
         font-size: 1rem;
         @include tablet {
