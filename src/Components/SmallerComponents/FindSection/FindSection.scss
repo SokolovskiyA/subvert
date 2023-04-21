@@ -31,6 +31,8 @@
         position: relative;
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
     }
     &__header {
         background-color: transparent;
@@ -59,7 +61,27 @@
             left: -5rem;
         }
     }
-
+    &__info2 {
+        display: none;
+    }
+    &__button {
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+        font-family: 'fester';
+        font-weight: 600;
+        font-size: 0.8rem;
+        color: $Color5-2;
+    }
+    &__2 {
+        display: block;
+    }
+    &__logo-div {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
 }
 
 @keyframes table {
@@ -262,5 +284,8 @@
         animation-name: x;
     }
 }
+
+
+
 
 

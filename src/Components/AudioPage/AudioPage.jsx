@@ -15,12 +15,13 @@ function AudioPage() {
     const chooseEpisode = (e, item) => {
         e.preventDefault()
         setActiveAudio(item)
-
+        window.scrollTo({top: 0, behavior: 'smooth'})
     }
     const chooseRandom = (e) => {
         e.preventDefault()
         const rand = audio[~~(Math.random() * audio.length)]
         setActiveAudio(rand)
+        window.scrollTo({top: 0, behavior: 'smooth'})
     }
     const fetchAudio = async () => {
         try {
@@ -50,8 +51,8 @@ function AudioPage() {
             <div className='audioPage__more'>
                 <FortuneWheel chooseRandom={chooseRandom}/>
                 <ul className='audioPage__list'>
-                    {audio.filter(audio => audio !== activeAudio)
-                            .map((episode) => {
+                    {audio
+                        .map((episode) => {
                                 const date = new Date(episode.published_at).toLocaleDateString('en-us', { year:"numeric", month:"long", day:"numeric"})
                         return (
                             <li onClick={e => chooseEpisode(e, episode)} className='audioPage__item' key={episode.id}>

@@ -7,6 +7,7 @@ import Button from '../Button/Button';
 import './Player.scss'
 
 function Player({episode}) {
+    console.log(episode)
     const [playing, setPlaying] = useState(false)
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
@@ -48,8 +49,10 @@ function Player({episode}) {
             <audio
                 ref={audioRef}
                 src={episode.audio_url}
+                preload="auto"
                 onTimeUpdate={handleTimeUpdate}
                 onLoadedMetadata={handleDurationChange}
+                type="audio/mp3"
             />
             {<Button click={handlePlayPause} classN="play__button" text={ playing ? "stop" : "play"}></Button>}
             <input

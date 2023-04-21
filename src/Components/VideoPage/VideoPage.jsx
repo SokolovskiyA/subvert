@@ -31,11 +31,13 @@ function VideoPage() {
     const chooseEpisode = (e, video) => {
         e.preventDefault()
         setActiveVideo(video)
+        window.scrollTo({top: 0, behavior: 'smooth'})
     }
     const chooseRandom = (e) => {
         e.preventDefault()
         const rand = videos[~~(Math.random() * videos.length)]
         setActiveVideo(rand)
+        window.scrollTo({top: 0, behavior: 'smooth'})
     }
 
     if ( videos.length === 0 ) 
@@ -48,7 +50,6 @@ function VideoPage() {
             <FortuneWheel chooseRandom={chooseRandom}/>
             <ul className="theatre__library">
                 {videos
-                    .filter(video => video.snippet.resourceId.videoId !== activeVideo.snippet.resourceId.videoId)
                     .map((video)=>{
                         const date = new Date(video.snippet.publishedAt).toLocaleDateString('en-us', { year:"numeric", month:"long", day:"numeric"}) 
                         return (
