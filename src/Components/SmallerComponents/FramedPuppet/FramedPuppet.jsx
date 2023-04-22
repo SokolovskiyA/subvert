@@ -15,11 +15,11 @@ function FramedPuppet({openBull}) {
         <div ref={ref} className='framed'>
             <div className='framed__frame1'>
                 <motion.img  animate={{x: isInView && [-1000, -500, -300, -200, -100, 0], rotate: isInView &&["14deg","-14deg","14deg","-14deg","14deg","-14deg"]}} transition={{duration: 2}} src={frame1} className='framed__pic1' alt="frame1"></motion.img>
-                <motion.img initial={{visibility: "hidden"}}  animate={{visibility:  "visible", rotate:  ["-360deg","-16deg"]}} transition={{duration: 1, delay: 3}} src={puppet1} className='framed__puppet1' alt="puppet1"/>
+                <motion.img initial={{visibility: "hidden"}}  animate={{visibility:  "visible", rotate:  ["-360deg","-16deg"]}} transition={{duration: 1, delay: 4}} src={puppet1} className='framed__puppet1' alt="puppet1"/>
             </div>
             <div className='framed__frame2'>
                 <motion.img animate={{x: isInView && [1000, 500, 300, 200, 100, 0], rotate: isInView && ["-14deg","14deg","-14deg","14deg","-14deg","14deg"]}} transition={{duration: 2}}  src={frame2} className='framed__pic2' alt="framed2"/>
-                <motion.img initial={{visibility: "hidden"}}  animate={{visibility:  "visible",  rotate:  ["360deg","18deg"]}} transition={{duration: 1, delay: 3}} src={puppet2} className='framed__puppet2' alt="puppet2"/>
+                <motion.img initial={{visibility: "hidden"}}  animate={{visibility:  "visible",  rotate:  ["360deg","18deg"]}} transition={{duration: 1, delay: 4}} src={puppet2} className='framed__puppet2' alt="puppet2"/>
             </div>
         </div>
     )
