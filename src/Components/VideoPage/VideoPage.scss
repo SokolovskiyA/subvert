@@ -4,6 +4,27 @@
 .theatre {
     background-color: $Color1-2;
     padding-bottom: 1rem;
+    &__video-div {
+        position: relative;
+    }
+    &__track-button2 {
+        position: absolute;
+        font-family: 'fester';
+        font-weight: 600;
+        font-size: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+        color: $Color3-2;
+    }
+    &__track-button {
+        position: absolute;
+        font-family: 'fester';
+        font-weight: 600;
+        font-size: 1rem;
+        color: $Color3-2;
+        left: 1rem;
+        bottom: 1rem;
+    }
     &__library {
         display: flex;
         flex-wrap: wrap;

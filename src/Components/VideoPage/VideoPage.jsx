@@ -7,6 +7,7 @@ import Header from '../SmallerComponents/Header/Header'
 import FortuneWheel from '../SmallerComponents/FortuneWheel/FortuneWheel'
 import axios from 'axios'
 import { useEffect } from 'react'
+import Button from '../SmallerComponents/Button/Button'
 
 function VideoPage() {
     const [videos, setVideos] = useState([])
@@ -39,14 +40,36 @@ function VideoPage() {
         setActiveVideo(rand)
         window.scrollTo({top: 0, behavior: 'smooth'})
     }
-
+    const nextTrack = (e) => {
+        e.preventDefault()
+        const index = videos.indexOf(activeVideo)
+        if (index === videos.length - 1) {
+            setActiveVideo(videos[videos.length - 1])
+        } else {
+            setActiveVideo(videos[index + 1])
+        }
+    }
+    const previousTrack = (e) => {
+        e.preventDefault()
+        let index = videos.indexOf(activeVideo)
+        if (index === 0) {
+            setActiveVideo(videos[0])
+            index = 1
+        } else {
+            setActiveVideo(videos[index - 1])
+        }
+    }
     if ( videos.length === 0 ) 
     return <div> Loading... </div>
     else
     return (
         <div className="theatre">
             <Header/>
-            <Video video={activeVideo}/>
+            <div className='theatre__video-div'>
+                <Video video={activeVideo}/>
+                <Button click={previousTrack} classN="theatre__track-button" text="earlier episode" />
+                <Button click={nextTrack} classN="theatre__track-button2" text="later episode" />
+            </div>
             <FortuneWheel chooseRandom={chooseRandom}/>
             <ul className="theatre__library">
                 {videos
