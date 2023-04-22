@@ -190,7 +190,7 @@ function FindSection() {
         setCatchIcon(!catchIcon)
     }
     return (
-        <div className='contact'>
+        <div className='contact' style={{ height:`fit content`}}>
             <img className='contact__logo' src={logo} alt='logo' />
             <div className={catchIcon ? `contact__info2` : `contact__info`}>
                 <img className="contact__puppet" src={pippetNet} alt="puppet with net"/>

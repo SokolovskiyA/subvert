@@ -21,19 +21,3 @@ p {
         margin: 1rem;
     }
 }
-audio {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-}
-audio {
-width: 100%;
-}
-audio::-webkit-media-controls-enclosure {
-    max-width: none;
-    background-color: inherit;
-    display: flex;
-    flex-direction: column;
-}

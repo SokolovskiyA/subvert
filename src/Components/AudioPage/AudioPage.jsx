@@ -7,9 +7,10 @@ import FortuneWheel from '../SmallerComponents/FortuneWheel/FortuneWheel';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import record from '../../Assets/puppets/record.svg'
+import Button from '../SmallerComponents/Button/Button';
 
 function AudioPage() {
-    const [ audio, setAudio] = useState([])
+    const [audio, setAudio] = useState([])
     const [activeAudio, setActiveAudio] = useState({})
     
     const chooseEpisode = (e, item) => {
@@ -22,6 +23,25 @@ function AudioPage() {
         const rand = audio[~~(Math.random() * audio.length)]
         setActiveAudio(rand)
         window.scrollTo({top: 0, behavior: 'smooth'})
+    }
+    const nextTrack = (e) => {
+        e.preventDefault()
+        const index = audio.indexOf(activeAudio)
+        if (index === audio.length - 1) {
+            setActiveAudio(audio[audio.length - 1])
+        } else {
+            setActiveAudio(audio[index + 1])
+        }
+    }
+    const previousTrack = (e) => {
+        e.preventDefault()
+        let index = audio.indexOf(activeAudio)
+        if (index === 0) {
+            setActiveAudio(audio[0])
+            index = 1
+        } else {
+            setActiveAudio(audio[index - 1])
+        }
     }
     const fetchAudio = async () => {
         try {
@@ -38,7 +58,8 @@ function AudioPage() {
         fetchAudio()
     }, [])
 
-    if ( audio.length === 0) 
+
+    if (audio.length === 0) 
         return <div> Loading... </div>
     else return (
         <div className='audioPage'>
@@ -47,6 +68,8 @@ function AudioPage() {
                 <h1 className='audioPage__playing-title'>{activeAudio.title}</h1>
                 <Player episode={activeAudio}/>
                 <p className='audioPage__description'>{parse(activeAudio.description.split('Welcome to the land of no easy answers')[0])}</p>
+                <Button click={previousTrack} classN="audioPage__track-button" text="earlier episode" />
+                <Button click={nextTrack} classN="audioPage__track-button2" text="later episode" />
             </div>
             <div className='audioPage__more'>
                 <FortuneWheel chooseRandom={chooseRandom}/>
