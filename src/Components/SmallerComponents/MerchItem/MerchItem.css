@@ -1,0 +1,15 @@
+.item {
+  height: 100%;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #DDE7D9;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+}
+.item__title {
+  font-family: "fester";
+  font-weight: 600;
+  color: #522C53;
+  margin: 1rem;
+}/*# sourceMappingURL=MerchItem.css.map */

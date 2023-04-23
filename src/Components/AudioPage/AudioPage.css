@@ -1,0 +1,117 @@
+.audioPage {
+  background-color: #242F40;
+  color: #F97C42;
+  display: flex;
+  flex-direction: column;
+}
+.audioPage__track-button2 {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-family: "fester";
+  font-weight: 600;
+  font-size: 1rem;
+  color: #F97C42;
+}
+.audioPage__track-button {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  font-family: "fester";
+  font-weight: 600;
+  font-size: 1rem;
+  color: #F97C42;
+}
+.audioPage__play {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  position: relative;
+  padding: 1.5rem;
+}
+.audioPage__playing-title {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+}
+@media (min-width: 768px) {
+  .audioPage__playing-title {
+    font-size: 2rem;
+  }
+}
+.audioPage__description {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+  .audioPage__description {
+    width: 80%;
+    font-size: 1.2rem;
+    margin: 2rem 0;
+  }
+}
+@media (min-width: 1200px) {
+  .audioPage__description {
+    width: 60%;
+  }
+}
+.audioPage__more {
+  background-color: #CDF4F0;
+}
+.audioPage__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem;
+  padding: 2rem;
+}
+.audioPage__item {
+  position: relative;
+  list-style: none;
+  background-color: #DDE7D9;
+  border-radius: 10px;
+  padding: 1rem;
+  border: 4px solid #242F40;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .audioPage__item {
+    flex-direction: row;
+    width: 70%;
+  }
+}
+@media (min-width: 1200px) {
+  .audioPage__item {
+    width: 45%;
+  }
+}
+.audioPage__item:hover {
+  scale: 1.1;
+  transition: 0.5s;
+}
+.audioPage__image {
+  width: 80%;
+  margin: auto;
+}
+@media (min-width: 768px) {
+  .audioPage__image {
+    width: 35%;
+  }
+}
+.audioPage__item-title {
+  width: 90%;
+  font-size: 0.8rem;
+}
+@media (min-width: 768px) {
+  .audioPage__item-title {
+    font-size: 1.2rem;
+  }
+}
+.audioPage__date {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+}/*# sourceMappingURL=AudioPage.css.map */
