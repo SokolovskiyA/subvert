@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 
 function MerchPage() {
     const [products, setProducts] = useState([])
-
+    console.log(products)
     useEffect(() => {
         axios.get('http://localhost:5001/products')
         .then(res => {
