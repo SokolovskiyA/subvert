@@ -2,33 +2,26 @@ import React from 'react'
 import './MerchPage.scss'
 import Header from '../SmallerComponents/Header/Header'
 import axios from 'axios'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 function MerchPage() {
-    const url = 'https://api.printful.com/store/products'
-    const getProduct = () => {
-        axios.get( url, {  
-            headers: {
-                Authorization: 'Bearer DwLaoIRBYFlqE7JcaTMF7klB7LKzXkJueUThMPKv'
-            }
-        })
-        .then((res) => {
-            console.log(res.data)
-        })
-        .catch((error) => {
-            console.error(error)
-        })
-    }
+    const [products, setProducts] = useState([])
 
     useEffect(() => {
-        getProduct()
+        axios.get('http://localhost:5001/products')
+        .then(res => {
+            setProducts(res.data)
+        })
+        .catch(err => {
+            console.log(err)
+        })
     }, [])
-
 
     return (
         <div>  
             <Header/>
             <h2>Wear us</h2>
+            {/*<img src={products[0].thumbnail_url} alt="merch" className="merch-img"/>*/}
         </div>
     )
 }

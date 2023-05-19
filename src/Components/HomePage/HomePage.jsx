@@ -11,13 +11,14 @@ import axios from 'axios';
 function HomePage() {
     const [ videos, setVideos] = useState([])
     const [ audio, setAudio] = useState([])
-    
     const fetchAudio = async () => {
         try {
             const response = await axios.get(`https://www.buzzsprout.com/api/1889842/episodes.json?api_token=a4d806c2a852bdb2acfac0e5aa554bdc`)
             const sorted = response.data
             sorted.sort((a,b)=> Date.parse(b.published_at) -  Date.parse(a.published_at))
+            sorted.filter((item) => item.status === 'public')
             setAudio(sorted)
+
         } catch (error) {
             console.log('there was an error fetchin video')
         }
@@ -38,7 +39,11 @@ function HomePage() {
     }, [])
     
     if ( videos.length === 0 || audio.length === 0) 
-    return <div> Loading... </div>
+    return (
+        <div> 
+            <p>Loading...</p>
+        </div>
+    )
     else return (
         <div>
             <Header />

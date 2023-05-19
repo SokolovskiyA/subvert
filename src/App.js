@@ -8,8 +8,6 @@ import AudioPage from './Components/AudioPage/AudioPage';
 
 
 function App() {
-
-
   return (
     <div className="App">
       <BrowserRouter>
