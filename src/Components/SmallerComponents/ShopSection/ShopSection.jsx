@@ -12,7 +12,7 @@ function ShopSection() {
     useEffect(() => {
         axios.get('http://localhost:5001/products')
         .then(res => {
-            setProducts(res.data.result)
+            setProducts(res.data)
         })
         .catch(err => {
             console.log(err)

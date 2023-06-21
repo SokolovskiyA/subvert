@@ -1,0 +1,85 @@
+@use '../../Styles/colors' as *;
+@use '../../Styles/screens' as *;
+
+.merchPage {
+    min-height: 100vh;
+    background-color: $Color5-1;
+    color: $Color3-2;
+    display: flex;
+    flex-direction: column;
+    &__shopping {
+        display: flex;
+    }
+    &__products {
+        display: flex;
+        flex-direction: column;
+        width:70%;
+        color: $Color2-1;
+    }
+    &__cart {
+        color: $Color2-1;
+        background-color: $Color5-1;
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-left: 4px solid $Color2-1;
+        position: relative;
+    }
+    &__checkout {
+        margin: 2rem;
+        background-color: $Color2-1;
+        border: none;
+        border-radius: 5px;
+        padding: 1rem 3rem;
+        color: $Color2-2;
+        font-size: 1.2rem;
+        font-weight: 700;
+        cursor: pointer;
+        font-family: 'fester';
+        &:hover {
+            background-color: $Color2-2;
+            color: $Color2-1;
+            scale: 1.1;
+        }
+        &:active {
+            scale: 1;
+            background-color: $Color2-1;
+            color: $Color2-2;
+
+        }
+    }
+    &__container {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    &__cartItem {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+        border-bottom: 2px solid $Color2-1;
+        margin: 0 1rem;
+        position: relative;
+    }
+    &__cartItemImage {
+        width: 25%;
+    }
+    &__delete {
+        background-color: transparent;
+        border: none;
+        width: 2.5rem;
+        position: absolute;
+        bottom: 0.5rem;
+        right: 0.5rem;
+    }
+    &__deleteIcon {
+        width: 2.5rem;
+    }
+    &__cartItemName {
+        margin: 0;
+    }
+}

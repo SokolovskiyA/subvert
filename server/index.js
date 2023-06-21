@@ -20,14 +20,27 @@ async function getPrintfulData(endpoint) {
             'Authorization': `Bearer ${apiKey}`,
         },
     });
-    return (response.data);
+    return (response.data.result);
 }
 
 app.get('/products', async (req, res) => {
     const data = await getPrintfulData('store/products');
     res.send(JSON.stringify(data));
 });
-
+app.get('/product-variants', async (req, res) => {
+    const data = await getPrintfulData('store/products');
+    const ids = [];
+    data.forEach((product) => {
+        ids.push(product.id);
+    }
+    );
+    const variants = [];
+    for (let i = 0; i < ids.length; i++) {
+        const response = await getPrintfulData(`store/products/${ids[i]}`);
+        variants.push(response);
+    }
+    res.send(JSON.stringify(variants));
+});
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
 });
