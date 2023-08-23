@@ -4,7 +4,6 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const axios = require('axios');
 
-
 const app = express();
 const port = process.env.PORT || 5001;
 
@@ -39,8 +38,19 @@ app.get('/product-variants', async (req, res) => {
         const response = await getPrintfulData(`store/products/${ids[i]}`);
         variants.push(response);
     }
+    variants.map(item => {
+        item.variant_options = []
+        item.sync_variants.map(i => {
+            item.variant_options.push(i.variant_id)
+        })
+    })
     res.send(JSON.stringify(variants));
 });
+
+app.get('/variants', async (req, res) => {
+    console.log(req.body)
+});
+
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
 });

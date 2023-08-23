@@ -16,6 +16,7 @@
     flex-direction: column;;
     align-items: center;
     border: 4px solid $Color2-1;
+    overflow: hidden;
     &__pic {
         width: 100%;
         height: auto;
@@ -24,5 +25,9 @@
         font-family: 'fester';
         font-weight: 600;
         margin-bottom: 1rem;
+    }
+    &:hover {
+        scale: 1.03;
+        transition: 1s;
     }
 }
