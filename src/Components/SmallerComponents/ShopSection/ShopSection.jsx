@@ -22,6 +22,7 @@ function ShopSection() {
         e.preventDefault();
         navigate('/audio')
     }
+    console.log(products)
     return (
         <div className='shop'>
             <h2>Wear our merch</h2>
@@ -32,7 +33,7 @@ function ShopSection() {
                         return null
                     }
                     else return (
-                        <MercghItem key={index} url={product.thumbnail_url} itemName={product.name}/>
+                        <MercghItem key={product.id} url={product.image} itemName={product.name}/>
                     )
                 })}
             </div>
