@@ -3,26 +3,13 @@ import './ShopSection.scss'
 import { useNavigate } from 'react-router-dom';
 import Button from '../Button/Button';
 import MercghItem from '../MerchItem/MerchItem';
-import axios from 'axios'
-import { useEffect, useState } from 'react'
 
-function ShopSection() {
-    const [products, setProducts] = useState([])
-    useEffect(() => {
-        axios.get('http://localhost:5001/products')
-        .then(res => {
-            setProducts(res.data)
-        })
-        .catch(err => {
-            console.log(err)
-        })
-    }, [])
+function ShopSection({products}) {
     const navigate = useNavigate();
     const moreMerch = (e) => {
         e.preventDefault();
-        navigate('/audio')
+        navigate('/store')
     }
-    console.log(products)
     return (
         <div className='shop'>
             <h2>Wear our merch</h2>

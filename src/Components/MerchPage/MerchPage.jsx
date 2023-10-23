@@ -1,66 +1,54 @@
 import React from 'react'
 import './MerchPage.scss'
 import Header from '../SmallerComponents/Header/Header'
-import axios from 'axios'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Item from '../SmallerComponents/Item/Item'
-import bin from '../../Assets/Images/bin.svg'
 import { motion } from 'framer-motion'
+import bin from '../../Assets/Images/bin.svg'
+import basket from '../../Assets/Images/shoppingCart.svg'
+import Button from '../SmallerComponents/Button/Button'
 
-function MerchPage() {
+function MerchPage({products}) {
     const [cart, setCart] = useState([])
-    const [variants, setVariants] = useState([])
-    const getVariants = () => {
-        axios.get('http://localhost:5001/product-variants')
-        .then(res => {
-            setVariants(res.data)
-        })
-        .catch(err => {
-            console.log(err)
-        })
-    }
-    useEffect(() => {
-        getVariants()
-    }, [])
+    const [open, setOpen] = useState(false)
     const addToCart = (e, product) => {
         e.preventDefault()
+        console.log(product)
         setCart([...cart, product])
+
     }
-    const removeItem = (product) => {
-        return (e) => {
-            e.preventDefault()
-            //setCart(cart.filter(item => item.id !== product.id))
-        }
-    }
-    
     return (
         <div className='merchPage'>  
             <Header/>
-            <div className='merchPage__shopping'>
-                <div className='merchPage__products'>
-                    <h2>Wear us</h2>
-                    <div className='merchPage__container'>
-                        {variants.map(product => {
-                            return (
-                                <Item key={product.sync_product.id} add={addToCart} product={product}/>
-                            )
-                        })}
-                    </div>
-                </div>
-                <div className='merchPage__cart'>
-                    <h2>Your Cart</h2>
-                    <div className='merchPage__bag'>
+            <div className='merchPage__products'>
+                <h2 className='merchPage__title'>Wear us</h2>
+                { open ? <motion.div initial={{x: "100%"}} animate={{x: 0}} transition={{duration: 2}} className='cart'>
+                <h2>Your Cart</h2>
+                    <Button click={e => setOpen(!open)} classN="cart__back" text="back" />
+                    <div className='cart__bag'>
                         {cart.map(product => {
                             return (
-                                <div className="merchPage__cartItem">
-                                    <img className='merchPage__cartItemImage' src={product.sync_product.thumbnail_url} alt={product.sync_product.name}/>
-                                    <h3 className='merchPage__cartItemName'>{product.sync_product.name}</h3>
-                                    <motion.button onClick={removeItem(product)} whileHover={{ y : [ 0, -10, 0], rotate: ["0deg", "10deg", "-10deg","10deg", "-10deg", "0deg"]}} transition={{ duration: 1}} className='merchPage__delete'><img className='merchPage__deleteIcon' src={bin} alt="bin"/></motion.button>
+                                <div key={product.id} className="cart__cartItem">
+                                    <img className='cart__cartItemImage' src={product.image} alt={product.id}/>
+                                    <h3 className='cart__cartItemName'>{product.name}</h3>
+                                    <p>{product.price}</p>
+                                    <motion.button whileHover={{ y : [ 0, -10, 0], rotate: ["0deg", "10deg", "-10deg","10deg", "-10deg", "0deg"]}} transition={{ duration: 1}} className='cart__delete'><img className='cart__deleteIcon' src={bin} alt="bin"/></motion.button>
                                 </div>
                             )
                         })}
                     </div>
-                    <button className='merchPage__checkout'>Checkout</button>
+                    <button className='cart__checkout'>Checkout</button>
+                </motion.div> : 
+                <div onClick={e => setOpen(!open)} className='cart__cartIconCnt'>
+                    <img className='cart__cartIcon' src={basket} alt='shopping basket'/>
+                    <span className='cart__number'>{cart.length}</span>
+                </div>}
+                <div className='merchPage__container'>
+                    {products.map(product => {
+                        return (
+                            <Item key={product.id} add={addToCart} product={product}/>
+                        )
+                    })}
                 </div>
             </div>
         </div>

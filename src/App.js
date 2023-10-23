@@ -1,4 +1,6 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import './App.scss'
 import MerchPage from './Components/MerchPage/MerchPage';
 import VideoPage from './Components/VideoPage/VideoPage';
@@ -8,19 +10,65 @@ import AudioPage from './Components/AudioPage/AudioPage';
 
 
 function App() {
-  return (
+    const [ videos, setVideos] = useState([])
+    const [ audio, setAudio] = useState([])
+    const [ products, setProducts] =useState([])
+    const fetchProducts = async () => {
+        axios.get('http://localhost:5001/products')
+        .then(res => {
+            setProducts(res.data)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    }
+    const fetchAudio = async () => {
+        try {
+            const response = await axios.get(`https://www.buzzsprout.com/api/1889842/episodes.json?api_token=a4d806c2a852bdb2acfac0e5aa554bdc`)
+            const sorted = response.data
+            sorted.sort((a,b)=> Date.parse(b.published_at) -  Date.parse(a.published_at))
+            sorted.filter((item) => item.status === 'public')
+            setAudio(sorted)
+
+        } catch (error) {
+            console.log('there was an error fetchin video')
+        }
+    }
+    const fetchVideos = async () => {
+        try {
+            const response = await axios.get(`https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=100&playlistId=PL4D0WL2ASB5zo56UHBVrfZ04jsG_EuQfj&key=AIzaSyDE8Zv4QfTBpbzCQy4cBhzGWRI2nxYVQrs`);
+            const sorted = response.data.items
+            sorted.sort((a,b)=> Date.parse(b.snippet.publishedAt) -  Date.parse(a.snippet.publishedAt))
+            setVideos(sorted)
+        } catch (error) {
+            console.log('there was an error fetchin video')
+        }
+    }
+    useEffect(() => {       
+        fetchVideos()
+        fetchAudio()
+        fetchProducts()
+    }, [])
+
+    if ( videos.length === 0 || audio.length === 0 || products.length === 0) 
+    return (
+        <div> 
+            <p>Loading...</p>
+        </div>
+    )
+    else return (
     <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<StartPage />}/>
-          <Route path='/home' element={<HomePage />}/>
-          <Route path='/videos' element={<VideoPage />}/>
-          <Route path='/audio' element={<AudioPage />}/>
-          <Route path='/store' element={<MerchPage />}/>
-        </Routes>
-      </BrowserRouter>
+        <BrowserRouter>
+            <Routes>
+                <Route path='/' element={<StartPage />}/>
+                <Route path='/home' element={<HomePage videos={videos} audio={audio} products={products}/>}/>
+                <Route path='/videos' element={<VideoPage videos={videos} />}/>
+                <Route path='/audio' element={<AudioPage audio={audio}/>}/>
+                <Route path='/store' element={<MerchPage products={products}/>}/>
+            </Routes>
+        </BrowserRouter>
     </div>
-  );
+    );
 }
 
 

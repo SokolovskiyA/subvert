@@ -13,17 +13,13 @@ import { motion } from 'framer-motion'
 
 function StartPage() {
     const [hover, setHover] = useState(false) 
-    console.log(hover)
     const navigate = useNavigate()
-
     const hoverAction = (e) => {
         setHover(!hover)
     }
-
     const start = () => {
         navigate('/home')
     }
-
     return (
         <div className="start">
             <motion.img initial={{top: -300}} animate={{top: [-200, 1000], rotate: 360}} transition={{duration: 4, repeat: Infinity}} className='start__puppet puppet1' src={puppet1} alt="puppet"/>

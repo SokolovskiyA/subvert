@@ -5,30 +5,10 @@ import { useState } from 'react'
 import logo from '../../Assets/puppets/tape.svg'
 import Header from '../SmallerComponents/Header/Header'
 import FortuneWheel from '../SmallerComponents/FortuneWheel/FortuneWheel'
-import axios from 'axios'
-import { useEffect } from 'react'
 import Button from '../SmallerComponents/Button/Button'
 
-function VideoPage() {
-    const [videos, setVideos] = useState([])
-    const [activeVideo, setActiveVideo] = useState({})
-    const fetchVideos = async () => {
-        try {
-            const response = await axios.get(`https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=100&playlistId=PL4D0WL2ASB5zo56UHBVrfZ04jsG_EuQfj&key=AIzaSyDE8Zv4QfTBpbzCQy4cBhzGWRI2nxYVQrs`);
-            const sorted = response.data.items
-            sorted.sort((a,b)=> Date.parse(b.snippet.publishedAt) -  Date.parse(a.snippet.publishedAt))
-            setVideos(sorted.filter(function(video) { 
-                return video.snippet.title !== 'Deleted video';
-            }))
-            setActiveVideo(sorted[0])
-        } catch (error) {
-            console.log('there was an error fetchin video')
-        }
-    }
-    useEffect(() => {       
-        fetchVideos()
-    }, [])
-
+function VideoPage({videos}) {
+    const [activeVideo, setActiveVideo] = useState(videos[0])
     const chooseEpisode = (e, video) => {
         e.preventDefault()
         setActiveVideo(video)
@@ -59,9 +39,6 @@ function VideoPage() {
             setActiveVideo(videos[index - 1])
         }
     }
-    if ( videos.length === 0 ) 
-    return <div> Loading... </div>
-    else
     return (
         <div className="theatre">
             <Header/>

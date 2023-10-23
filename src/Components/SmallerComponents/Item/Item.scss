@@ -3,20 +3,22 @@
 
 .shopItem {
     @include tablet {
-        width: 45%;
+        width: 90%
     }
     @include desktop {
-        width: 30%;
+        width: 95%
     }
-    width: 80%;
+    width: 85%;
     background-color: $Color2-1;
     color: $Color2-2;;
     border-radius: 25px;
     display: flex;
-    flex-direction: column;;
+    flex-direction: column;
     align-items: center;
     border: 4px solid $Color2-1;
     overflow: hidden;
+    margin: 0 auto 2rem;
+    padding-bottom: 0.5rem;
     &__pic {
         width: 100%;
         height: auto;
@@ -25,9 +27,73 @@
         font-family: 'fester';
         font-weight: 600;
         margin-bottom: 1rem;
+        text-align: center;
     }
     &:hover {
         scale: 1.03;
         transition: 1s;
     }
+    &__options {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+    }
+    &__price {
+        width: max-content;
+        font-size: 1.4rem;
+        text-align: center;
+        margin: 0.5rem;
+    }
+    &__color {
+        width: 1.2rem;
+        height: 1.2rem;
+        border-radius: 50%;
+        border: 1px solid white;
+        &:hover {
+            scale: 1.1;
+        }
+    }
+    &__size {
+        padding: 0.5rem;
+        margin: 0;
+        border-radius: 4rem;
+        &:hover {
+            background-color: $Color5-1;
+            color: $Color2-1;
+        }
+    }
+    &__addBox {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__addToCart {
+        text-align: center;
+        font-family: 'fester';
+        color: $Color2-2;
+        font-size: 1rem;
+        font-weight: 600;
+        padding-top: 0.5rem;
+    }
+}
+.colors {
+    width: 100%;
+    margin: 0.5rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+.sizes {
+    width: 90%;
+    margin: 0.5rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.choosenSize {
+    background-color: $Color5-1;
+    color: $Color2-1;
+}
+.choosenColor {
+    border: 3px solid white; 
 }
