@@ -1,0 +1,33 @@
+@use '../../../styles/colors' as *;
+@use '../../../styles/screens' as *;
+
+.cartItem {
+    border-bottom: 2px solid $Color2-1;
+    margin: 0 2rem;
+    width: 100%;
+    &__delete {
+        background-color: transparent;
+        border: none;
+        width: 2.5rem;
+        bottom: 0.5rem;
+        right: 0.5rem;
+    }
+    &__deleteIcon {
+        width: 1.5rem;
+    }
+    &__name, &__price, &__image {
+        margin: 0;
+    }
+    &__price, &__color, &__size, &__name {
+        text-align: center;
+        margin: auto;
+    }
+    &__image {
+        width: 4rem;
+        border-radius: 50%;
+    }
+    &__color {
+        width: "1rem";
+        height: "1rem";
+    }
+}

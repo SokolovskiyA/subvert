@@ -3,10 +3,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const axios = require('axios');
-
 const app = express();
 const port = process.env.PORT || 5001;
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors());
@@ -14,7 +12,6 @@ app.use(cors());
 const apiKey = 'DwLaoIRBYFlqE7JcaTMF7klB7LKzXkJueUThMPKv';
 
 //variables 
-
 class Product {
     constructor(id, image) {
         this.name = ''
@@ -33,9 +30,6 @@ class Option {
         this.availability = avl
     }
 }
-
-
-
 // functions
 async function getPrintfulData(endpoint) {
     const response = await axios.get(`https://api.printful.com/${endpoint}`, {
@@ -65,6 +59,7 @@ async function getProducts()  {
     }
     return (products)
 }
+
 
 //endpoints
 app.get('/products', async (req, res) => {

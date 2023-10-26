@@ -1,0 +1,84 @@
+@use '../../../styles/colors' as *;
+@use '../../../styles/screens' as *;
+
+.cart {
+    color: $Color2-1;
+    background-color: $Color5-1;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden ;
+    right: 0;
+    top: -3px;
+    &__bag {
+        width: 90%;
+    }
+    &__checkout {
+        margin: 2rem;
+        background-color: $Color2-1;
+        border: none;
+        border-radius: 5px;
+        padding: 1rem 3rem;
+        color: $Color2-2;
+        font-size: 1.2rem;
+        font-weight: 700;
+        cursor: pointer;
+        font-family: 'fester';
+        &:hover {
+            background-color: $Color2-2;
+            color: $Color2-1;
+            scale: 1.1;
+        }
+        &:active {
+            scale: 1;
+            background-color: $Color2-1;
+            color: $Color2-2;
+        }
+    }
+    &__cartIconCnt {
+        width: fit-content;
+        margin: auto;
+        @include tablet { 
+            position: absolute;
+            right: 5%;
+            top: 0;
+        }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 0.5rem 2rem;
+        border-radius: 25px;
+        background-color: $Color2-1;
+        height: 3rem;
+        &:hover {
+            scale: 1.1;
+            transition: 1s;
+        }
+    }
+    &__cartIcon {
+        width: 2rem;
+        height: auto;
+    }
+    &__number {
+        font-family: 'sans serif';
+        font-weight: 600;
+        font-size: 2rem;
+        color: $Color2-2;
+        margin: 0;
+        padding: 0;
+    }
+    &__back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-family: 'fester';
+        margin: 1rem;
+        font-weight: 600;
+        font-size: 1.2rem;
+        color: $Color2-1
+    }
+}
+

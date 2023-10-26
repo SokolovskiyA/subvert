@@ -4,49 +4,30 @@ import { useState, useEffect } from 'react'
 import Button from '../Button/Button'
 
 function Item({product, add}) {
+
+    const [chosenItem, setChosenItem] = useState(product.options[0])
     const [colors, setColors]= useState([])
     const [sizes, setSizes] = useState([])
     
-    const [chosenItem, setChosenItem] = useState({
-        id: product.options[0].variant_id,
-        image: product.options[0].image,
-        price: product.options[0].price,
-        color: product.options[0].color,
-        size: product.options[0].size
-    })
-
-    const chooseSize = (e, size) => {
-        e.preventDefault();
-        const newItem = product.options.find((item) => item.color === chosenItem.color && item.size === size)
-        setChosenItem(newItem)
-    }
-    const chooseColor = (e, color) => {
-        e.preventDefault()
+    useEffect((e) => {    
+        const newColors = []
         const newSizes = []
-        const newItems = []
-        product.options.forEach((option)=> {
-            if (option.color === color) {
-                newItems.push(option)
+        product.options.forEach((option) => {
+            newColors.push(option.color)
+            if (option.color === chosenItem.color) {
                 newSizes.push(option.size)
             }
         })
-        setSizes(newSizes)
-        chosenItem.size = newSizes[0]
-        setChosenItem(newItems[0])
+        setColors(newColors.filter((value, index) => newColors.indexOf(value) === index))
+        setSizes(newSizes.filter((value, index) => newSizes.indexOf(value) === index))
+    },[chosenItem])
+
+    const chooseColor = (color) => {
+        setChosenItem(product.options.find((item) => item.color === color))
     }
-
-    useEffect((e) => {    
-        product.options.forEach((option) => {
-            colors.push(option.color)
-            if (option.color === chosenItem.color) {
-                sizes.push(option.size)
-            }
-        })
-        setColors(colors.filter((value, index) => colors.indexOf(value) === index))
-        setSizes(sizes.filter((value, index) => sizes.indexOf(value) === index))
-    },[product.options])
-
-    
+    const chooseSize = (size) => { 
+        setChosenItem(product.options.find((item) => item.color === chosenItem.color && item.size === size))
+    }
     return (
     <div className='shopItem'>
         <h3 className='shopItem__title'>{product.name}</h3>
@@ -54,19 +35,19 @@ function Item({product, add}) {
         <div className='shopItem__options'>
             <div className='shopItem__addBox'>
                 <p className='shopItem__price'>{'$'+chosenItem.price}</p>
-                <Button click={e => add(e,chosenItem)} classN="shopItem__addToCart" text="add to cart"/>
+                <Button click={e => add(chosenItem)} classN="shopItem__addToCart" text="add to cart"/>
             </div>
             <div className="colors" style={colors.length < 2 ? {display: 'none'}:{}}>
                 {colors.map(color => {
                     return(
-                        <div onClick={e => chooseColor(e, color)} className={chosenItem.color === color ? 'shopItem__color choosenColor' : 'shopItem__color'} style={{backgroundColor: `${color}`}}></div>
+                        <div onClick={e => chooseColor(color)} className={chosenItem.color === color ? 'shopItem__color choosenColor' : 'shopItem__color'} style={{backgroundColor: `${color}`}}></div>
                     )
                 })}
             </div>
             <div className ="sizes">
                 {sizes.map(size => {
                     return(
-                        <p onClick={e => chooseSize(e, size)} className={chosenItem.size === size ? 'shopItem__size choosenSize' : 'shopItem__size'}>{size}</p>
+                        <p onClick={e => chooseSize(size)} className={chosenItem.size === size ? 'shopItem__size choosenSize' : 'shopItem__size'}>{size}</p>
                     )
                 })}
             </div>
