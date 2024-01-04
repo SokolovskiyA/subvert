@@ -27,6 +27,7 @@ class Option {
         this.size = size
         this.color = color
         this.image = image;
+        this.qty = 1;
         this.availability = avl
     }
 }
@@ -66,9 +67,37 @@ app.get('/products', async (req, res) => {
     const data = await getProducts()
     res.send(JSON.stringify(data));
 });
+app.get('/countries', async (req, res) => {
+    const data = await getPrintfulData('/countries')
+    res.send(JSON.stringify(data));
+});
 
-app.get('/variants', async (req, res) => {
-
+app.post('/get_estimate', async (req, res) => {
+    console.log(req.body)
+    await axios.post('https://api.printful.com/orders', {
+        shipping : "STANDARD",
+        recipient: {
+            name: req.body.recipient.name,
+            address1: req.body.recipient.address1,
+            city: req.body.recipient.city,
+            state_name: req.body.recipient.state_name,
+            state_code: req.body.recipient.state_code,
+            country_name: req.body.recipient.country_name,
+            country_code: req.body.recipient.country_code,
+            zip: req.body.recipient.zip,
+        },
+        items: req.body.items,
+    }, {
+        headers: {
+            'Authorization': `Bearer ${apiKey}`,
+        }
+    })
+    .then(function (response) {
+        res.send(JSON.stringify(response.data.result));
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
 });
 
 app.listen(port, () => {

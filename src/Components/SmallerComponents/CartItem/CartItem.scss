@@ -1,10 +1,9 @@
 @use '../../../styles/colors' as *;
 @use '../../../styles/screens' as *;
 
+
 .cartItem {
     border-bottom: 2px solid $Color2-1;
-    margin: 0 2rem;
-    width: 100%;
     &__delete {
         background-color: transparent;
         border: none;
@@ -15,19 +14,16 @@
     &__deleteIcon {
         width: 1.5rem;
     }
-    &__name, &__price, &__image {
-        margin: 0;
-    }
-    &__price, &__color, &__size, &__name {
-        text-align: center;
-        margin: auto;
-    }
     &__image {
-        width: 4rem;
-        border-radius: 50%;
+        margin: auto;
+        width: 6rem;
     }
     &__color {
-        width: "1rem";
-        height: "1rem";
+        width: 1rem;
+        height: 1rem;
+        margin: 1rem;
+    }
+    &__name, &__price, &__size {
+        width: fit-content;
     }
 }

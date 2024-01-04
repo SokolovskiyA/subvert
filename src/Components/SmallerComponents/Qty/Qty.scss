@@ -1,0 +1,27 @@
+@use '../../../styles/colors' as *;
+@use '../../../styles/screens' as *;
+
+.qty {
+    margin: 1rem;
+    display: flex;
+    &__text {
+        padding: 0;
+        margin: 0.5rem;
+    }
+    &__left {
+        width: 1rem;
+        border: 2px solid $Color2-1;
+        border-radius: 5px 0 0 5px;
+        &:active {
+            background-color: $Color3-2;
+        }
+    }
+    &__right {
+        width: 1rem;
+        border: 2px solid $Color2-1;
+        border-radius:0 5px 5px 0;
+        &:active {
+            background-color: $Color2-2;
+        }
+    }
+}

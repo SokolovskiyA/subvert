@@ -1,0 +1,8 @@
+@use '../../styles/colors' as *;
+@use '../../styles/screens' as *;
+
+.checkout {
+    background-color: $Color2-1;
+    color: $Color1-1;
+    height: 100%;
+}

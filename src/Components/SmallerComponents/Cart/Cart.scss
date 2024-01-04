@@ -1,19 +1,36 @@
 @use '../../../styles/colors' as *;
 @use '../../../styles/screens' as *;
 
+th, td {
+    padding: 0.5rem 0;
+}
+
 .cart {
+    text-align: center;
     color: $Color2-1;
     background-color: $Color5-1;
     width: 100%;
-    min-height: 100vh;
+    overflow: hidden ;
+    top: -3px;
+    min-height: 80vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    overflow: hidden ;
-    right: 0;
-    top: -3px;
+    &__empty {
+        font-family: 'fester';
+        font-size: 1rem;
+        margin: 2rem;
+    }
     &__bag {
-        width: 90%;
+        width: 100%;
+        border-collapse: collapse;
+    }
+    &__total-row {
+        background-color: $Color2-1;
+        color: $Color5-1;
+        font-family: 'fester';
+    }
+    &__total {
+        text-align: start;
     }
     &__checkout {
         margin: 2rem;
@@ -80,5 +97,45 @@
         font-size: 1.2rem;
         color: $Color2-1
     }
+    &__form_container {
+        margin-top: auto;
+        color: $Color2-2;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: $Color2-1;
+        padding-bottom: 2rem;
+    }
+    &__form {
+        width: 100%;
+        @include tablet {
+            flex-direction: row;
+        }
+        display: flex;
+        flex-direction: column;
+    }
+    &__form_div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: 'fester';
+        font-size: 0.8rem;
+        width: 90%;
+    }
+    &__form_input {
+        color: $Color2-1;
+        margin: 0.5rem 0;
+        font-family: 'fester';
+        font-size: 0.8rem;
+        font-weight: 500;
+        padding: 0.3rem;
+        width: 90%;
+        @include desktop {
+            font-size: 1.2rem;
+        }
+    }
+
 }
+
 

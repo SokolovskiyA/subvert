@@ -7,6 +7,8 @@ import VideoPage from './Components/VideoPage/VideoPage';
 import StartPage from './Components/StartPage/StartPage';
 import HomePage from './Components/HomePage/HomePage';
 import AudioPage from './Components/AudioPage/AudioPage';
+import { CartProvider } from './Context/CartContext'
+import Checkout from './Components/Checkout/Checkout';
 
 
 function App() {
@@ -58,15 +60,18 @@ function App() {
     )
     else return (
     <div className="App">
-        <BrowserRouter>
-            <Routes>
-                <Route path='/' element={<StartPage />}/>
-                <Route path='/home' element={<HomePage videos={videos} audio={audio} products={products}/>}/>
-                <Route path='/videos' element={<VideoPage videos={videos} />}/>
-                <Route path='/audio' element={<AudioPage audio={audio}/>}/>
-                <Route path='/store' element={<MerchPage products={products}/>}/>
-            </Routes>
-        </BrowserRouter>
+        <CartProvider>
+            <BrowserRouter>
+                <Routes>
+                    <Route path='/' element={<StartPage />}/>
+                    <Route path='/home' element={<HomePage videos={videos} audio={audio} products={products}/>}/>
+                    <Route path='/videos' element={<VideoPage videos={videos} />}/>
+                    <Route path='/audio' element={<AudioPage audio={audio}/>}/>
+                    <Route path='/store' element={<MerchPage products={products}/>}/>
+                    <Route path='/store/checkout' element={<Checkout />}/>
+                </Routes>
+            </BrowserRouter>
+        </CartProvider>
     </div>
     );
 }
