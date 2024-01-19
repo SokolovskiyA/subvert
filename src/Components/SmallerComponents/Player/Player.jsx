@@ -86,15 +86,15 @@ function Player({episode}) {
             </div>
                 <div className='play__lights'>
                     <motion.div initial={{backgroundColor: "#F97C42"}}  
-                                animate={{ backgroundColor: playing ? ["#F97C42", "#C73E1D", "#242F40", "#F2C14A", "#C6D858", "#522C53"] : "#none"}} 
+                                animate={{ backgroundColor: playing ? ["#F97C42", "#C73E1D", "#242F40", "#F2C14A", "#C6D858", "#522C53"] : "#242F40"}} 
                                 transition={{ delay: 0, duration: 2, repeat: playing && Infinity}}  
                                 className ='play__element1'></motion.div>
                     <motion.div initial={{backgroundColor: "#F97C42"}} 
-                                animate={{ backgroundColor: playing ? ["#F97C42", "#C73E1D", "#242F40", "#F2C14A", "#C6D858", "#522C53"] : "#none"}} 
+                                animate={{ backgroundColor: playing ? ["#F97C42", "#C73E1D", "#242F40", "#F2C14A", "#C6D858", "#522C53"] : "#C73E1D"}} 
                                 transition={{ delay: 0.5, duration: 2, repeat: playing && Infinity}}  
                                 className ='play__element2'></motion.div>
                     <motion.div initial={{backgroundColor: "#F97C42"}}
-                                animate={{ backgroundColor: playing ? ["#F97C42", "#C73E1D", "#242F40", "#F2C14A", "#C6D858", "#522C53"] : "#none"}} 
+                                animate={{ backgroundColor: playing ? ["#F97C42", "#C73E1D", "#242F40", "#F2C14A", "#C6D858", "#522C53"] : "#F97C42"}} 
                                 transition={{ delay: 1, duration: 2, repeat: playing && Infinity}} 
                                 className ='play__element3'></motion.div>
                 </div>

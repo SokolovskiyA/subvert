@@ -25,16 +25,16 @@ function App() {
         })
     }
     const fetchAudio = async () => {
-        try {
-            const response = await axios.get(`https://www.buzzsprout.com/api/1889842/episodes.json?api_token=a4d806c2a852bdb2acfac0e5aa554bdc`)
-            const sorted = response.data
+        axios.get('http://localhost:5001/audio') 
+        .then(res => {
+            const sorted = res.data
             sorted.sort((a,b)=> Date.parse(b.published_at) -  Date.parse(a.published_at))
             sorted.filter((item) => item.status === 'public')
             setAudio(sorted)
-
-        } catch (error) {
-            console.log('there was an error fetchin video')
-        }
+        })
+        .catch(err => {
+            console.log(err, 'there was error fetching audio')
+        })
     }
     const fetchVideos = async () => {
         try {

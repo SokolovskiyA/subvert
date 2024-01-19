@@ -4,5 +4,9 @@
 .checkout {
     background-color: $Color2-1;
     color: $Color1-1;
-    height: 100%;
+    min-height: 80vh;
+    padding: 1rem;
+    &__title {
+        text-align: center;
+    }
 }

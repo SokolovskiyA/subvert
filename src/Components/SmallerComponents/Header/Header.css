@@ -1,0 +1,30 @@
+.header {
+  background-color: #DDE7D9;
+  color: #242F40;
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-height: 20vh;
+}
+.header__logo-div {
+  margin: auto;
+}
+.header__logo {
+  height: 12vh;
+}
+.header__button {
+  font-family: "fester";
+  font-weight: 600;
+  font-size: 2rem;
+  color: #242F40;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+}
+.header__puppet {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 70%;
+  rotate: 90deg;
+}/*# sourceMappingURL=Header.css.map */

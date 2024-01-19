@@ -1,0 +1,95 @@
+.theatre {
+  background-color: #242F40;
+  padding-bottom: 1rem;
+}
+.theatre__video-div {
+  position: relative;
+}
+.theatre__track-button2 {
+  position: absolute;
+  font-family: "fester";
+  font-weight: 600;
+  font-size: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  color: #F97C42;
+}
+.theatre__track-button {
+  position: absolute;
+  font-family: "fester";
+  font-weight: 600;
+  font-size: 1rem;
+  color: #F97C42;
+  left: 1rem;
+  bottom: 1rem;
+}
+.theatre__library {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.theatre__item {
+  background-color: #CDF4F0;
+  border-radius: 10px;
+  border: 4px solid black;
+  position: relative;
+  color: #F97C42;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  align-items: center;
+  margin: 1rem auto;
+  padding: 0.5rem;
+}
+@media (min-width: 768px) {
+  .theatre__item {
+    padding: 1rem;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+@media (min-width: 1200px) {
+  .theatre__item {
+    width: 45%;
+    margin: 1rem;
+  }
+}
+.theatre__item:hover {
+  scale: 1.1;
+  transition: 0.5s;
+}
+.theatre__item-name {
+  font-size: 0.8rem;
+}
+@media (min-width: 768px) {
+  .theatre__item-name {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 1200px) {
+  .theatre__item-name {
+    font-size: 1.2rem;
+  }
+}
+.theatre__date {
+  position: relative;
+  font-size: 0.8rem;
+}
+@media (min-width: 768px) {
+  .theatre__date {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+  }
+}
+.theatre__logo {
+  align-self: flex-start;
+  width: 60%;
+  margin: auto;
+}
+@media (min-width: 768px) {
+  .theatre__logo {
+    margin: 0;
+    width: 30%;
+  }
+}/*# sourceMappingURL=VideoPage.css.map */

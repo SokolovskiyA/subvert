@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Button from '../Button/Button';
 import MercghItem from '../MerchItem/MerchItem';
 
+
 function ShopSection({products}) {
     const navigate = useNavigate();
     const moreMerch = (e) => {

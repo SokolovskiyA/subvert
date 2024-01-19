@@ -1,0 +1,32 @@
+.shop {
+  background-color: #522C53;
+  padding: 2rem;
+  color: #C6D858;
+  position: relative;
+  text-align: center;
+}
+.shop__link {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-family: "fester";
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #C6D858;
+}
+.shop__merch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+  .shop__merch {
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}/*# sourceMappingURL=ShopSection.css.map */

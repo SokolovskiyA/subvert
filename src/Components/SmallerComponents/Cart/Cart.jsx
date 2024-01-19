@@ -10,12 +10,16 @@ import RecipientForm from '../../RecipientForm/RecipientForm'
 import brownPuppet from '../../../Assets/puppets/BrownPuppet.png'
 import { useNavigate } from 'react-router-dom'
 
+
 function Cart() {
     const navigate = useNavigate()
-    const {cart, open, setOpen, recipient} = useContext(CartContext)
+    const {cart, open, setOpen, recipient, setShipping, totalFunction} = useContext(CartContext)
     const getOrderTotal = (cart, recipient) => {
         if (recipient.name === `` || recipient.address1 === `` || recipient.city === `` || recipient.state_name === `` || recipient.country_name === `` || recipient.zip === `` || recipient.phone === `` || recipient.email === ``) {
             alert('Please fill out all fields')
+        }
+        else if (cart.length === 0) {
+            alert('Your cart is empty')
         }
         else {
         const items = []
@@ -35,31 +39,24 @@ function Cart() {
             items: items
         })
         .then(function (response) {
-            console.log(response);
+            setShipping(response.data.costs.shipping)
             navigate('/store/checkout')
         })
         .catch(function (error) {
-        console.log(error);
+            console.log(error);
         });
         }
     }
 
-    const totalFunction = (cart) => {
-        var orderTotal = 0
-        cart.forEach( item => {
-            const itemTotal = item.price * item.qty
-            orderTotal = orderTotal + itemTotal
-        })
-        return orderTotal
-    }
+    
     return (
         <motion.div initial={{x: "100%"}} animate={{x: 0}} transition={{duration: 1}} className='cart'>
             <h2>Your Cart</h2>
             <Button click={e => setOpen(!open)} classN="cart__back" text="back" />
             {cart.length === 0 ? 
                 <div>
-                    <p className='cart__empty'>Your cart is empty</p> 
                     <img className='cart__puppet' src={brownPuppet} alt="puppet"/>
+                    <p className='cart__empty'>Empty</p> 
                 </div> :
             <table className='cart__bag'>
                 <tbody>

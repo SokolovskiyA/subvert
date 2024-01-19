@@ -1,0 +1,41 @@
+.merchPage {
+  position: relative;
+  min-height: -moz-min-content;
+  min-height: min-content;
+  background-color: #DDE7D9;
+  color: #F97C42;
+  display: flex;
+  flex-direction: column;
+}
+.merchPage__title {
+  margin: 0 auto 2rem;
+}
+.merchPage__shopping {
+  display: flex;
+}
+.merchPage__products {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 100%;
+  color: #242F40;
+}
+.merchPage__container {
+  margin: 2rem auto;
+  width: 90%;
+  -moz-columns: 1;
+       columns: 1;
+}
+@media (min-width: 768px) {
+  .merchPage__container {
+    -moz-columns: 2;
+         columns: 2;
+  }
+}
+@media (min-width: 1200px) {
+  .merchPage__container {
+    -moz-columns: 3;
+         columns: 3;
+  }
+}/*# sourceMappingURL=MerchPage.css.map */

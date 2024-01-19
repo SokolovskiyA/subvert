@@ -1,36 +1,30 @@
 import './RecipientForm.scss'
 import React from 'react'
 import CartContext from '../../Context/CartContext'
-import { useState, useEffect, useContext } from 'react'
+import { useState, useContext} from 'react'
 import axios from 'axios'
 
 function RecipientForm() {
     const { recipient, setRecipient } = useContext(CartContext)
-    const [ countries, setCountries ] = useState([])
+    const  countries = ['Canada', 'United States']
     const [ states, setStates ] = useState([])
+    
 
     const chooseCountry = (option) => {
-        const country = countries.find(country => country.name === option)
-        setRecipient({...recipient, 
-            country_name: country.name, 
-            country_code: country.code,
+        axios.post('http://localhost:5001/countries', {
+            country: option
         })
-        country.states ? setStates(country.states) : setStates([]);
-    }
-
-    const fetchCountries = async () => {
-        axios.get('http://localhost:5001/countries')
-        .then( response => {
-            setCountries(response.data)
-
+        .then(function (response) {
+            setStates(response.data.states)
+            setRecipient({...recipient, 
+                country_code: response.data.code, 
+                country_name: response.data.name,
+            })
         })
         .catch(function (error) {
             console.log(error);
         });
     }
-    useEffect(() => {       
-        fetchCountries(setCountries)
-    }, [])
 
 
     if (countries) return (
@@ -52,7 +46,7 @@ function RecipientForm() {
                 <select className='cart__form_input' onChange={e => chooseCountry(e.target.value)}>
                     <option value="">Choose country</option>
                     {countries.map((country) => 
-                        <option key={country.name} value={country.name}>{country.name}</option>
+                        <option key={country} value={country}>{country}</option>
                     )}
                 </select>
                 <label htmlFor="state">state</label>

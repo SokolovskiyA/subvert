@@ -2,6 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+require('dotenv').config()
 const axios = require('axios');
 const app = express();
 const port = process.env.PORT || 5001;
@@ -9,7 +10,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors());
 
-const apiKey = 'DwLaoIRBYFlqE7JcaTMF7klB7LKzXkJueUThMPKv';
+const apiKey = process.env.PRINTFUL_API_KEY;
+const clientId = process.env.PAYPAL_CLIENT_ID;
+const clientSecret = process.env.PAYPAL_CLIENT_SECRET;
+
 
 //variables 
 class Product {
@@ -63,18 +67,20 @@ async function getProducts()  {
 
 
 //endpoints
+
 app.get('/products', async (req, res) => {
     const data = await getProducts()
     res.send(JSON.stringify(data));
 });
-app.get('/countries', async (req, res) => {
+
+app.post('/countries', async (req, res) => {
     const data = await getPrintfulData('/countries')
-    res.send(JSON.stringify(data));
+    const chosenCountry = data.find((item) => item.name === req.body.country)
+    res.send(JSON.stringify(chosenCountry));
 });
 
 app.post('/get_estimate', async (req, res) => {
-    console.log(req.body)
-    await axios.post('https://api.printful.com/orders', {
+    await axios.post('https://api.printful.com/orders/estimate-costs', {
         shipping : "STANDARD",
         recipient: {
             name: req.body.recipient.name,
@@ -99,6 +105,22 @@ app.post('/get_estimate', async (req, res) => {
         console.log(error);
     });
 });
+
+/*app.get ('/videos' , async (req, res) => {
+    const response = await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&q=printful&key=${process.env.YOUTUBE_API_KEY}`)
+    res.send(JSON.stringify(response.data.items))
+})*/
+
+app.get ('/audio' , async (req, res) => {
+    await axios.get(`https://www.buzzsprout.com/api/1889842/episodes.json?api_token=${process.env.BUZZSPROUT_API_KEY}`)
+    .then(function (response) {
+        console.log(response.data)
+        res.send(JSON.stringify(response.data));
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
+})
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);

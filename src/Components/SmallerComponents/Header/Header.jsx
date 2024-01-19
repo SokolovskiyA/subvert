@@ -6,6 +6,7 @@ import Navigation from '../Navigation/Navigation';
 import logo from '../../../Assets/Images/Sub.svg';
 import { AnimatePresence, motion } from 'framer-motion';
 import puppet from '../../../Assets/puppets/BrownPuppet.png';
+import { Link } from 'react-router-dom';
 
 
 
@@ -30,7 +31,7 @@ function Header() {
         <motion.div className="header">
             <Button hover={setHover} classN="header__button" click={openMenu} text="Menu"/>
             <AnimatePresence>{menuOpen && <Navigation/>}</AnimatePresence>
-            <motion.img whileInView={{rotate: 355}} transition={{duration: 1}} src={logo} className='header__logo' alt="logo"/>
+            <Link className='header__logo-div' to="/home"><motion.img whileInView={{rotate: 355}} transition={{duration: 1}} src={logo} className='header__logo' alt="logo"/></Link>
             {menuOpen ? 
             <motion.img animate={{margin: menuOpen ? "3rem 0 0 9rem" : "3.5rem 0 0 -2rem", rotate: -30}} transition={{delay: 1.5, duration: 1}} src={puppet} className='header__puppet' alt="puppet"/> 
             :  

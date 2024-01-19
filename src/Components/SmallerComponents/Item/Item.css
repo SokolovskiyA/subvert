@@ -1,0 +1,105 @@
+.shopItem {
+  width: 85%;
+  background-color: #242F40;
+  color: #C6D858;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 4px solid #242F40;
+  overflow: hidden;
+  margin: 0 auto 2rem;
+  padding-bottom: 0.5rem;
+}
+@media (min-width: 768px) {
+  .shopItem {
+    width: 90%;
+  }
+}
+@media (min-width: 1200px) {
+  .shopItem {
+    width: 95%;
+  }
+}
+.shopItem__pic {
+  width: 100%;
+  height: auto;
+}
+.shopItem__title {
+  font-family: "fester";
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.shopItem:hover {
+  scale: 1.03;
+  transition: 1s;
+}
+.shopItem__options {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+.shopItem__price {
+  width: -moz-max-content;
+  width: max-content;
+  font-size: 1.4rem;
+  text-align: center;
+  margin: 0.5rem;
+}
+.shopItem__color {
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+.shopItem__color:hover {
+  scale: 1.1;
+}
+.shopItem__size {
+  padding: 0.5rem;
+  margin: 0;
+  border-radius: 4rem;
+}
+.shopItem__size:hover {
+  background-color: #DDE7D9;
+  color: #242F40;
+}
+.shopItem__addBox {
+  display: flex;
+  justify-content: space-between;
+}
+.shopItem__addToCart {
+  text-align: center;
+  font-family: "fester";
+  color: #C6D858;
+  font-size: 1rem;
+  font-weight: 600;
+  padding-top: 0.5rem;
+}
+
+.colors {
+  width: 100%;
+  margin: 0.5rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.sizes {
+  width: 90%;
+  margin: 0.5rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.choosenSize {
+  background-color: #DDE7D9;
+  color: #242F40;
+}
+
+.choosenColor {
+  border: 3px solid white;
+}/*# sourceMappingURL=Item.css.map */

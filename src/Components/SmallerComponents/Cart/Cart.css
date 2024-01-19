@@ -1,0 +1,142 @@
+th, td {
+  padding: 0.5rem 0;
+}
+
+.cart {
+  text-align: center;
+  color: #242F40;
+  background-color: #DDE7D9;
+  width: 100%;
+  overflow: hidden;
+  top: -3px;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+.cart__empty {
+  font-family: "fester";
+  font-size: 1rem;
+  margin: 2rem;
+}
+.cart__bag {
+  width: 100%;
+  border-collapse: collapse;
+}
+.cart__total-row {
+  background-color: #242F40;
+  color: #DDE7D9;
+  font-family: "fester";
+}
+.cart__total {
+  text-align: start;
+}
+.cart__checkout {
+  margin: 2rem;
+  background-color: #242F40;
+  border: none;
+  border-radius: 5px;
+  padding: 1rem 3rem;
+  color: #C6D858;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: "fester";
+}
+.cart__checkout:hover {
+  background-color: #C6D858;
+  color: #242F40;
+  scale: 1.1;
+}
+.cart__checkout:active {
+  scale: 1;
+  background-color: #242F40;
+  color: #C6D858;
+}
+.cart__cartIconCnt {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.5rem 2rem;
+  border-radius: 25px;
+  background-color: #242F40;
+  height: 3rem;
+}
+@media (min-width: 768px) {
+  .cart__cartIconCnt {
+    position: absolute;
+    right: 5%;
+    top: 0;
+  }
+}
+.cart__cartIconCnt:hover {
+  scale: 1.1;
+  transition: 1s;
+}
+.cart__cartIcon {
+  width: 2rem;
+  height: auto;
+}
+.cart__number {
+  font-family: "sans serif";
+  font-weight: 600;
+  font-size: 2rem;
+  color: #C6D858;
+  margin: 0;
+  padding: 0;
+}
+.cart__back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: "fester";
+  margin: 1rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #242F40;
+}
+.cart__form_container {
+  margin-top: auto;
+  color: #C6D858;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #242F40;
+  padding-bottom: 2rem;
+}
+.cart__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .cart__form {
+    flex-direction: row;
+  }
+}
+.cart__form_div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "fester";
+  font-size: 0.8rem;
+  width: 90%;
+}
+.cart__form_input {
+  color: #242F40;
+  margin: 0.5rem 0;
+  font-family: "fester";
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.3rem;
+  width: 90%;
+}
+@media (min-width: 1200px) {
+  .cart__form_input {
+    font-size: 1.2rem;
+  }
+}/*# sourceMappingURL=Cart.css.map */

@@ -8,9 +8,11 @@
     align-items: center;
     position: relative;
     min-height: 20vh;
+    &__logo-div {
+        margin: auto;
+    }
     &__logo {
         height: 12vh;
-        margin: auto;
     }
     &__button {
         font-family: 'fester';

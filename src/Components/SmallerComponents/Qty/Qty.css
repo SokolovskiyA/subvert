@@ -1,0 +1,24 @@
+.qty {
+  margin: 1rem;
+  display: flex;
+}
+.qty__text {
+  padding: 0;
+  margin: 0.5rem;
+}
+.qty__left {
+  width: 1rem;
+  border: 2px solid #242F40;
+  border-radius: 5px 0 0 5px;
+}
+.qty__left:active {
+  background-color: #F97C42;
+}
+.qty__right {
+  width: 1rem;
+  border: 2px solid #242F40;
+  border-radius: 0 5px 5px 0;
+}
+.qty__right:active {
+  background-color: #C6D858;
+}/*# sourceMappingURL=Qty.css.map */

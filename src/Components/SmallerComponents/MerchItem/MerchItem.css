@@ -1,0 +1,64 @@
+.link {
+  width: 80%;
+}
+@media (min-width: 768px) {
+  .link {
+    width: 30%;
+  }
+}
+@media (min-width: 1200px) {
+  .link {
+    width: 20%;
+  }
+}
+
+.item {
+  background-color: #DDE7D9;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 4px solid #242F40;
+}
+.item__title {
+  font-family: "fester";
+  font-weight: 600;
+  color: #522C53;
+  margin-bottom: 1rem;
+}
+.item__img {
+  height: auto;
+  width: 100%;
+}
+.item__link {
+  font-family: "fester";
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #522C53;
+  background-color: #F97C42;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 0 20px 20px;
+  padding: 0.5rem 1.5rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+.item__link:hover {
+  background-color: #C73E1D;
+  color: #E9E3E0;
+}
+.item__button-puppet {
+  height: 3rem;
+  rotate: 15deg;
+}
+.item__shopping-cart {
+  height: 2.5rem;
+  margin-left: auto;
+  rotate: 15deg;
+}
+
+.item:hover {
+  transform: translateY(-10px) !important;
+  transition: transform 0.5s ease-in-out;
+}/*# sourceMappingURL=MerchItem.css.map */

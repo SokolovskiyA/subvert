@@ -5,14 +5,7 @@ const CartContext = createContext();
 export function CartProvider({children}) {
     const [cart, setCart] = useState([])
     const [open, setOpen] = useState(false)
-    const [order, setOrder] = useState({
-        id: ``,
-        order_total: ``,
-        order_subtotal: ``,
-        order_tax: 0.07,
-        order_shipping: ``,
-    })
-
+    const [shipping, setShipping] = useState(0)
     const [recipient, setRecipient] = useState({ 
         name: ``,
         address1: ``,
@@ -25,7 +18,6 @@ export function CartProvider({children}) {
         phone: ``,
         email: ``,
     })
-
 
     const removeItem = (product) => {
         setCart(cart.filter(item => item.variant_id !== product.variant_id))
@@ -54,6 +46,15 @@ export function CartProvider({children}) {
         })
     };
 
+    const totalFunction = (cart) => {
+        var orderTotal = 0
+        cart.forEach( item => {
+            const itemTotal = item.price * item.qty
+            orderTotal = orderTotal + itemTotal
+        })
+        return orderTotal
+    }
+
 
     return (
         <CartContext.Provider value={{
@@ -65,7 +66,10 @@ export function CartProvider({children}) {
             decreaseQty,
             removeItem,
             recipient,
-            setRecipient
+            setRecipient, 
+            shipping, 
+            setShipping,
+            totalFunction
             }}>{children}</CartContext.Provider>
     )
 }
